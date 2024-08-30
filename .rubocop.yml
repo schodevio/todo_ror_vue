@@ -1,0 +1,57 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+Style/Documentation:
+  Enabled: false
+
+Style/HashSyntax:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - staging
+    - test
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+    - 'config/environments/**/*.rb'
+    - 'config/routes.rb'
+
+Style/ExpandPathArguments:
+  Exclude:
+    - 'spec/rails_helper.rb'
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 5
+
+AllCops:
+  TargetRubyVersion: 3.2
+  Exclude:
+    - bin/**/*
+    - db/**/*
+    - vendor/**/*
+    - config/boot.rb
+    - config.ru
+    - config/application.rb
+    - tmp/**/*
+    - node_modules/**/*
+  CacheRootDirectory: tmp/
+  NewCops: disable
+  SuggestExtensions: false
