@@ -1,0 +1,58 @@
+@layer components {
+  .testimonial {
+    @apply
+      mx-auto
+      mb-16;
+
+    &__icon {
+      & > svg {
+        @apply
+          h-12
+          mx-auto
+          mb-3
+          text-gray-400;
+      }
+    }
+
+    &__body {
+      p {
+        @apply
+          text-2xl
+          font-medium
+          text-gray-900;
+      }
+    }
+
+    &__meta {
+      @apply
+        flex
+        items-center
+        justify-center
+        mt-6
+        space-x-3;
+    }
+
+    &__author {
+      @apply
+        flex
+        items-center
+        divide-x-2
+        divide-gray-500;
+    }
+
+    &__name {
+      @apply
+        pe-3
+        font-medium
+        text-gray-900;
+    }
+
+    &__occupation {
+      @apply
+        ps-3
+        text-sm
+        font-light
+        text-gray-500;
+    }
+  }
+}

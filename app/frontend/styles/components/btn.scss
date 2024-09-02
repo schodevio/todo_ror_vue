@@ -1,0 +1,38 @@
+@layer components {
+  .btn {
+    @apply
+      text-gray-900
+      bg-white
+      border-gray-200
+      hover:text-indigo-700
+      hover:bg-gray-100
+      focus:ring-gray-100
+      focus:ring-4
+      focus:outline-none
+      rounded-lg
+      border
+      font-medium
+      text-sm
+      py-3
+      px-6;
+
+    &--primary {
+      @apply
+        text-white
+        bg-indigo-700
+        border-indigo-700
+        hover:text-white
+        hover:bg-indigo-800
+        focus:ring-indigo-300;
+    }
+
+    &--icon {
+      @apply
+        rounded-full
+        p-2.5
+        text-center
+        inline-flex
+        items-center;
+    }
+  }
+}

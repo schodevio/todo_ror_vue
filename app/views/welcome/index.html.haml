@@ -1,1 +1,180 @@
-%h1 Hello World
+%nav
+  .container.mx-auto
+    .flex.justify-between.items-baseline.py-3
+      .w-32
+        %h1.text-2xl.font-bold Todo App
+
+      %ul.navbar
+        %li= link_to 'Home', '#home', class: 'navbar__link active'
+        %li= link_to 'About', '#about', class: 'navbar__link'
+        %li= link_to 'Features', '#features', class: 'navbar__link'
+        %li= link_to 'Benefits', '#benefits', class: 'navbar__link'
+        %li= link_to 'Testimonials', '#testimonials', class: 'navbar__link'
+        %li= link_to 'Pricing', '#pricing', class: 'navbar__link'
+        %li= link_to 'FAQ', '#faq', class: 'navbar__link'
+
+      %ul.navbar
+        %li= link_to 'Sign Up', '#', class: 'btn btn--primary'
+        %li= link_to 'Sign In', '#', class: 'btn btn'
+
+%header#home.bg-white
+  .container.min-h-screen.mx-auto.pt-48.pb-32.px-12.relative
+    %hgroup.text-center
+      %h1.mb-6.text-6xl.font-extrabold.tracking-tight.leading-none.text-gray-900 Stay Organized, Stay Productive
+      %h3.mb-8.text-xl.font-normal.text-gray-500.px-16 Manage your tasks effortlessly with [App Name] - your ultimate ToDo app for personal and professional productivity.
+
+    .flex.flex-row.mb-16.justify-center.space-y-0.space-x-4
+      = link_to '#', class: 'btn btn--primary' do
+        .flex.items-center.gap-2
+          %span Get Started for Free
+          %span= tabler_icon 'arrow_right'
+      = link_to '#', class: 'btn' do
+        .flex.items-center.gap-2
+          %span= tabler_icon 'video'
+          %span Watch Video
+
+    .flex.justify-center.mt-48
+      = link_to '#about', class: 'btn btn--icon btn--primary animate-bounce' do
+        = tabler_icon 'arrow_down'
+
+%section#about.bg-white
+  .container.mx-auto.py-16.px-12
+    .text-center.mb-16
+      %h2.mb-12.text-4xl.tracking-tight.font-extrabold.text-gray-900 What is [App Name]?
+      %p.text-gray-500.text-xl.text-gray-400 [App Name] is a simple yet powerful ToDo app designed to help you organize your day, manage your tasks, and boost your productivity. Whether you're planning your day-to-day activities, managing work projects, or creating grocery lists, [App Name] has everything you need to stay on top of your tasks and achieve your goals.
+
+%section#features.bg-white
+  .container.mx-auto.py-16.px-12
+    .mb-16
+      %h2.mb-4.text-4xl.tracking-tight.font-extrabold.text-gray-900 What Makes Us Unique?
+
+    .grid.grid-cols-3.gap-12.space-y-0
+      .feature
+        .feature__icon
+          = tabler_icon 'app_window'
+        %h4.feature__title Easy-to-Use Interface
+        %p.feature__body A clean, intuitive design that makes adding, editing, and completing tasks a breeze.
+
+      .feature
+        .feature__icon
+          = tabler_icon 'list_tree'
+        %h4.feature__title Customizable Task Lists
+        %p.feature__body Create custom task lists for every part of your life – from work projects to personal goals.
+
+      .feature
+        .feature__icon
+          = tabler_icon 'bell_ringing'
+        %h4.feature__title Smart Reminders and Notifications
+        %p.feature__body Never miss a deadline with smart reminders that notify you based on your preferences.
+
+      .feature
+        .feature__icon
+          = tabler_icon 'refresh'
+        %h4.feature__title Seamless Sync Across Devices
+        %p.feature__body Access your tasks anytime, anywhere with automatic sync across all your devices.
+
+      .feature
+        .feature__icon
+          = tabler_icon 'table_share'
+        %h4.feature__title Collaborative Features
+        %p.feature__body Share lists and collaborate with family, friends, or colleagues to get things done together.
+
+      .feature
+        .feature__icon
+          = tabler_icon 'progress'
+        %h4.feature__title Progress Tracking
+        %p.feature__body Visualize your progress with our built-in tracking and analytics tools.
+
+-# %section#benefits.bg-white
+  .container.mx-auto.py-16.px-12
+    .mb-16
+      %h2.mb-4.text-4xl.tracking-tight.font-extrabold.text-gray-900 Why Choose [App Name]?
+
+    %div
+      %div
+        %h4 Stay Focused and Organized
+        %p Prioritize your tasks, set deadlines, and stay on track with your daily goals.
+
+      %div
+        %h4 Boost Your Productivity
+        %p Achieve more in less time with efficient task management and easy-to-use tools.
+
+      %div
+        %h4 Simplify Your Life
+        %p One app to manage all aspects of your life, from work to personal tasks.
+
+      %div
+        %h4 Get Started Instantly
+        %p No steep learning curve or complex setups – just sign up, and start organizing.
+
+%section#testimonials.bg-white
+  .container.mx-auto.py-16.px-12
+    .mb-16
+      %h2.mb-4.text-4xl.tracking-tight.font-extrabold.text-gray-900 Real Feedback from Users
+
+    .mx-auto.text-center.py-16.px-6
+      %figure.testimonial
+        .testimonial__icon
+          = tabler_icon 'quote'
+        %blockquote.testimonial__body
+          %p "[App Name] has transformed the way I manage my day. It's simple, effective, and keeps me on track like never before!"
+        %figcaption.testimonial__meta
+          .testimonial__author
+            .testimonial__name Sarah
+            .testimonial__occupation Freelancer
+
+      %figure.testimonial
+        .testimonial__icon
+          = tabler_icon 'quote'
+        %blockquote.testimonial__body
+          %p "I love the collaborative features – it's perfect for managing tasks with my team!"
+        %figcaption.testimonial__meta
+          .testimonial__author
+            .testimonial__name David
+            .testimonial__occupation Project Manager
+
+-# %section#gallery.bg-white
+  .container.mx-auto.py-16.px-12
+    .mb-16
+      %h2.mb-4.text-4xl.tracking-tight.font-extrabold.text-gray-900 Screenshots or Demo Video
+      %h3 See [App Name] in Action
+
+  -# Include 2-3 screenshots of the app or a short demo video showing the main features and user interface.
+
+-# %section#pricing.bg-white
+  .container.mx-auto.py-16.px-12
+    .mb-16
+      %h2.mb-4.text-4xl.tracking-tight.font-extrabold.text-gray-900 Clear and Transparent Pricing
+      %h3 Flexible Plans for Every Need
+
+    %ul
+      %li Free Plan: "Basic task management features to get you started."
+      %li Pro Plan: "$5/month – Advanced features, smart reminders, collaboration tools, and more."
+      %li Enterprise Plan: "Contact us for custom solutions tailored to your business."
+
+    %div
+      = link_to 'Choose Your Plan', '#'
+
+-# %section#faq.bg-white
+  .container.mx-auto.py-16.px-12
+    .mb-16
+      %h2.mb-4.text-4xl.tracking-tight.font-extrabold.text-gray-900 Address Common Questions
+
+    %ul
+      %li Is [App Name] free to use?
+      %li How does the collaboration feature work?
+      %li Can I use [App Name] offline?
+      %li Is my data secure?
+
+-# %footer
+  Contact Us: "Have questions? Reach out to us at support@[appname].com"
+  Follow Us: [Social Media Icons with Links]
+  Privacy Policy | Terms of Service
+
+%hr
+
+%main
+  %div{ data: { behavior: 'hello-world' } }
+    %hello-world
+
+  = vite_typescript_tag 'entrypoints/helloWorld.ts'

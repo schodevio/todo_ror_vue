@@ -1,0 +1,27 @@
+@layer components {
+  .navbar {
+    @apply
+      flex
+      items-baseline
+      gap-2;
+
+    &__link {
+      @apply
+        text-gray-900
+        bg-white
+        hover:text-indigo-600
+        hover:bg-gray-100
+        rounded
+        block
+        font-medium
+        text-lg
+        py-2
+        px-3;
+
+      &.active {
+        @apply
+          text-indigo-700;
+      }
+    }
+  }
+}
