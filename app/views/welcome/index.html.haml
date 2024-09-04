@@ -1,8 +1,8 @@
 %nav
   .container.mx-auto
     .flex.justify-between.items-baseline.py-3
-      .w-32
-        %h1.text-2xl.font-bold Todo App
+      .w-48
+        %h1.text-2xl.font-bold [App Name]
 
       %ul.navbar
         %li= link_to 'Home', '#home', class: 'navbar__link active'
@@ -14,8 +14,11 @@
         %li= link_to 'FAQ', '#faq', class: 'navbar__link'
 
       %ul.navbar
-        %li= link_to 'Sign Up', '#', class: 'btn btn--primary'
-        %li= link_to 'Sign In', '#', class: 'btn btn'
+        - if user_signed_in?
+          %li= link_to 'Go To App', user_panel_dashboard_path, class: 'btn btn--primary'
+        - else
+          %li= link_to 'Sign Up', new_user_registration_path, class: 'btn btn--primary'
+          %li= link_to 'Sign In', new_user_session_path, class: 'btn btn'
 
 %header#home.bg-white
   .container.min-h-screen.mx-auto.pt-48.pb-32.px-12.relative
@@ -170,11 +173,3 @@
   Contact Us: "Have questions? Reach out to us at support@[appname].com"
   Follow Us: [Social Media Icons with Links]
   Privacy Policy | Terms of Service
-
-%hr
-
-%main
-  %div{ data: { behavior: 'hello-world' } }
-    %hello-world
-
-  = vite_typescript_tag 'entrypoints/helloWorld.ts'

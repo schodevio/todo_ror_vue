@@ -76,6 +76,7 @@ GEM
       mutex_m
       tzinfo (~> 2.0)
     ast (2.4.2)
+    base32-crockford (0.1.0)
     base64 (0.2.0)
     bcrypt (3.1.20)
     bigdecimal (3.1.8)
@@ -302,6 +303,13 @@ GEM
     timeout (0.4.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    ulid (1.4.0)
+    ulid-rails (2.1.0)
+      activemodel (>= 5.2)
+      activerecord (>= 5.2)
+      activesupport (>= 5.2)
+      base32-crockford (~> 0.1)
+      ulid (~> 1.0)
     unicode-display_width (2.5.0)
     vite_rails (3.0.17)
       railties (>= 5.1, < 8)
@@ -350,6 +358,7 @@ DEPENDENCIES
   simplecov
   sprockets-rails
   tzinfo-data
+  ulid-rails
   vite_rails
   web-console
 

@@ -13,6 +13,7 @@ gem 'puma', '>= 5.0'
 gem 'rails', '~> 7.1.3', '>= 7.1.3.4'
 gem 'sprockets-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
+gem 'ulid-rails'
 gem 'vite_rails'
 
 # gem 'bcrypt', '~> 3.1.7'

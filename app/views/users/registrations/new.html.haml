@@ -1,0 +1,12 @@
+.flex.flex-col.justify-center.items-center.px-6.py.8.min-h-screen
+  = link_to '[App Name]', '#', class: 'flex items-center mb-6 text-2xl font-semibold text-gray-900'
+
+  .w-96.bg-white.rounded-lg.shadow
+    .p-6.space-y-6
+      %h1.text-xl.font-bold.leading-tight.tracking-tight.text-gray-900 Create an account
+
+      %div{ data: { behavior: 'user-sign-up-form' } }
+        %user-sign-up-form{ 'v-bind': render(partial: 'users/registrations/new_form') }
+          = render partial: 'users/registrations/new_form_skeleton'
+
+      = vite_typescript_tag 'entrypoints/users/signUpForm.ts'
