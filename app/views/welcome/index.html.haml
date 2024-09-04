@@ -115,7 +115,7 @@
     .mb-16
       %h2.mb-4.text-4xl.tracking-tight.font-extrabold.text-gray-900 Real Feedback from Users
 
-    .mx-auto.text-center.py-16.px-6
+    .mx-auto.text-center.pt-16.px-6
       %figure.testimonial
         .testimonial__icon
           = tabler_icon 'quote'
@@ -158,16 +158,32 @@
     %div
       = link_to 'Choose Your Plan', '#'
 
--# %section#faq.bg-white
+%section#faq.bg-white
   .container.mx-auto.py-16.px-12
     .mb-16
       %h2.mb-4.text-4xl.tracking-tight.font-extrabold.text-gray-900 Address Common Questions
 
-    %ul
-      %li Is [App Name] free to use?
-      %li How does the collaboration feature work?
-      %li Can I use [App Name] offline?
-      %li Is my data secure?
+    .grid.grid-cols-2.gap-16.pt-8.text-left.border-t.border-gray-200
+      .faq-item
+        %h3.faq-item__question
+          = tabler_icon 'help_hexagon'
+          Is [App Name] free to use?
+        %p.faq-item__answer Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, maxime blanditiis? Culpa enim praesentium dolorem, quam unde ex neque mollitia, quae earum, qui perferendis. Ea libero atque repellendus tempore ducimus.
+      .faq-item
+        %h3.faq-item__question
+          = tabler_icon 'help_hexagon'
+          How does the collaboration feature work?
+        %p.faq-item__answer Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem autem, harum inventore minima praesentium distinctio, dolorum recusandae necessitatibus quia sit iste quasi accusamus corrupti eius sapiente obcaecati cupiditate culpa eos?
+      .faq-item
+        %h3.faq-item__question
+          = tabler_icon 'help_hexagon'
+          Can I use [App Name] offline?
+        %p.faq-item__answer Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, consequatur velit eveniet quos doloremque a beatae nihil, cum atque ullam in error adipisci voluptas natus. Ipsam, itaque eum? Ea, cum.
+      .faq-item
+        %h3.faq-item__question
+          = tabler_icon 'help_hexagon'
+          Is my data secure?
+        %p.faq-item__answer Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit molestias non saepe exercitationem sed, libero, asperiores minus, nobis assumenda tempora totam beatae ullam laudantium officia molestiae aliquam et necessitatibus voluptas?
 
 -# %footer
   Contact Us: "Have questions? Reach out to us at support@[appname].com"

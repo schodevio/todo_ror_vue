@@ -1,0 +1,30 @@
+@layer components {
+  .faq-item {
+    @apply
+      mb-10;
+
+    &__question {
+      @apply
+        flex
+        items-center
+        mb-4
+        text-lg
+        font-medium
+        text-gray-900;
+
+      & > svg {
+        @apply
+          flex-shrink-0
+          mr-2
+          w-6
+          h-6
+          text-indigo-500;
+      }
+    }
+
+    &__answer {
+      @apply
+        text-gray-500;
+    }
+  }
+}
