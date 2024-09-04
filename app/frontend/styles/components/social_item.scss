@@ -1,0 +1,10 @@
+@layer components {
+  .social-item {
+    & > svg {
+      @apply
+        w-8
+        h-8
+        text-gray-500;
+    }
+  }
+}

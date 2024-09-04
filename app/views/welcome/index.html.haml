@@ -42,9 +42,25 @@
 
 %section#about.bg-white
   .container.mx-auto.py-16.px-12
-    .text-center.mb-16
-      %h2.mb-12.text-4xl.tracking-tight.font-extrabold.text-gray-900 What is [App Name]?
-      %p.text-gray-500.text-xl.text-gray-400 [App Name] is a simple yet powerful ToDo app designed to help you organize your day, manage your tasks, and boost your productivity. Whether you're planning your day-to-day activities, managing work projects, or creating grocery lists, [App Name] has everything you need to stay on top of your tasks and achieve your goals.
+    .mb-16
+      %h2.mb-4.text-4xl.tracking-tight.font-extrabold.text-gray-900 What is [App Name]?
+
+    %p.mb-16.text-gray-500.text-lg.text-gray-400 [App Name] is a simple yet powerful ToDo app designed to help you organize your day, manage your tasks, and boost your productivity. Whether you're planning your day-to-day activities, managing work projects, or creating grocery lists, [App Name] has everything you need to stay on top of your tasks and achieve your goals.
+
+    %dl.grid.grid-cols-4.gap-8.mx-auto.text-gray-900
+      .flex.flex-col.justify-content.items-center
+        %dt.mb-2.text-4xl.font-extrabold 100K +
+        %dd.font-light.text-gray-500 users
+      .flex.flex-col.justify-content.items-center
+        %dt.mb-2.text-4xl.font-extrabold 2M +
+        %dd.font-light.text-gray-500 checklists
+      .flex.flex-col.justify-content.items-center
+        %dt.mb-2.text-4xl.font-extrabold 16M +
+        %dd.font-light.text-gray-500 tasks
+      .flex.flex-col.justify-content.items-center
+        %dt.mb-2.text-4xl.font-extrabold ≈ 99%
+        %dd.font-light.text-gray-500 satisfied users
+
 
 %section#features.bg-white
   .container.mx-auto.py-16.px-12
@@ -185,7 +201,34 @@
           Is my data secure?
         %p.faq-item__answer Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit molestias non saepe exercitationem sed, libero, asperiores minus, nobis assumenda tempora totam beatae ullam laudantium officia molestiae aliquam et necessitatibus voluptas?
 
--# %footer
-  Contact Us: "Have questions? Reach out to us at support@[appname].com"
-  Follow Us: [Social Media Icons with Links]
-  Privacy Policy | Terms of Service
+%footer.bg-white
+  .container.mx-auto.py-16.px-12
+    .flex.flex-col.items-center.space-y-8
+      %h2= link_to '[App Name]', root_path, class: ' text-2xl font-semibold text-gray-900'
+
+      .text-lg.text-center.text-gray-500
+        Have questions? Reach out to us on social media or at
+        = link_to 'support@[appname].com', 'mailto:support@[appname].com', class: 'font-medium text-indigo-600 hover:underline'
+
+      %ul.flex.flex-row.justify-center.gap-8
+        %li
+          = link_to '#', class: 'social-item' do
+            = tabler_icon 'brand_facebook'
+        %li
+          = link_to '#', class: 'social-item' do
+            = tabler_icon 'brand_x'
+        %li
+          = link_to '#', class: 'social-item' do
+            = tabler_icon 'brand_instagram'
+        %li
+          = link_to '#', class: 'social-item' do
+            = tabler_icon 'brand_youtube'
+        %li
+          = link_to '#', class: 'social-item' do
+            = tabler_icon 'brand_tiktok'
+
+      %ul.flex.flex-row.justify-center.gap-4
+        %li
+          = link_to 'Privacy Policy', '#', class: 'text-sm text-gray-500 hover:text-indigo-500 hover:underline'
+        %li
+          = link_to 'Terms of Service', '#', class: 'text-sm text-gray-500 hover:text-indigo-500 hover:underline'
