@@ -25,9 +25,17 @@ module TodoRorVue
     # in config/environments, which are processed later.
     #
     # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("extras")
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Eager load paths
+    config.eager_load_paths << Rails.root.join('app', 'validators')
+
+    # Generators
+    config.generators do |g|
+      g.factory_bot suffix: 'factory'
+      g.test_framework :rspec
+    end
   end
 end

@@ -7,4 +7,5 @@ class User < ApplicationRecord
 
   ## Validations
   validates :first_name, :last_name, presence: true
+  validates :password, strong_password: true
 end
