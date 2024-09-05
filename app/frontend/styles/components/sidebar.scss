@@ -1,0 +1,52 @@
+@layer components {
+  .sidebar {
+    @apply
+      fixed
+      top-0
+      left-0
+      z-40
+      w-64
+      h-screen
+      pt-14
+      bg-white
+      border-r
+      border-gray-200;
+
+    &__container {
+      @apply
+        flex
+        flex-col
+        justify-between
+        overflow-y-auto
+        py-5
+        px-3
+        h-full
+        bg-white
+        divide-y
+        divide-gray-100;
+    }
+
+    &__nav {
+      @apply
+        space-y-2;
+    }
+
+    &__nav-link {
+      @apply
+        flex
+        items-center
+        p-2
+        text-base
+        font-medium
+        text-gray-900
+        rounded-lg
+        hover:bg-indigo-100;
+
+      &.active {
+        @apply
+          text-indigo-700
+          bg-gray-100;
+      }
+    }
+  }
+}

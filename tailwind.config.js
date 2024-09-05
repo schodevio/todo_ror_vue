@@ -7,7 +7,12 @@ module.exports = {
     './app/frontend/**/*.{js,ts,vue,css,scss}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        '10.5': '2.625rem',
+        '11.5': '2.875rem'
+      }
+    },
   },
   plugins: [],
 }
