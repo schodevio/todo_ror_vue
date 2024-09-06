@@ -20,9 +20,17 @@ module UserPanel
       respond_with @checklist
     end
 
-    def update; end
+    def update
+      checklist.update(checklist_params)
 
-    def destroy; end
+      respond_with @checklist
+    end
+
+    def destroy
+      checklist.destroy
+
+      head :no_content
+    end
 
     private
 
