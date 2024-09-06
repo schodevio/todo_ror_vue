@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   }
 
   namespace :user_panel, path: :users do
+    resources :checklists, only: %i[index show create update destroy]
+
     resource :dashboard, controller: :dashboard, only: :show
   end
 

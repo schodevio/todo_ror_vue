@@ -1,10 +1,11 @@
+//- Libs
 import { reactive, toRefs } from 'vue'
-
+//- Models
 import { UserModel } from '@components/users/models/user'
-
+//- Composables
 import useErrors from '@components/shared/errors/composables/useErrors'
 import useLoading from '@components/shared/loading/composables/useLoading'
-
+//- Utils
 import useHTTP from '@utils/useHTTP'
 
 export default (initialData: Partial<UserModel> = {}) => {

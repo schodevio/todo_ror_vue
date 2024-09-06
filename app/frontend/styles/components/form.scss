@@ -1,0 +1,12 @@
+@layer components {
+  .form {
+    &__actions {
+      @apply
+        flex
+        justify-end
+        items-center
+        gap-2
+        mt-8;
+    }
+  }
+}

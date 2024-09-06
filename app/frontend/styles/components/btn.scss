@@ -13,8 +13,10 @@
       border
       font-medium
       text-sm
-      py-3
-      px-6;
+      text-center
+      inline-block
+      py-2.5
+      px-5;
 
     &--primary {
       @apply

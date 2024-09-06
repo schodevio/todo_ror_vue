@@ -1,0 +1,79 @@
+@layer components {
+  .checklist {
+    &__grid {
+      @apply
+        grid
+        lg:grid-cols-2
+        xl:grid-cols-3
+        2xl:grid-cols-4
+        gap-4
+        mb-12;
+    }
+
+    &__item {
+      @apply
+        h-48
+        max-w-lg
+        relative
+        border
+        border-gray-200
+        rounded-lg
+        shadow
+        overflow-clip;
+    }
+
+    &__thumbnail {
+      @apply
+        w-full
+        h-full
+        bg-gray-400
+        bg-center
+        bg-no-repeat
+        bg-cover
+        bg-blend-multiply
+        rounded-lg
+        transition-transform
+        hover:scale-105;
+    }
+
+    &__title {
+      @apply
+        text-2xl
+        font-semibold
+        text-white
+        drop-shadow
+        absolute
+        left-4
+        top-4;
+    }
+
+    &__new-button {
+      @apply
+        h-48
+        max-w-lg
+        flex
+        flex-col
+        justify-center
+        items-center
+        gap-2
+        rounded-lg
+        border-dashed
+        border-2
+        bg-white
+        hover:bg-gray-100
+        border-gray-500
+        hover:border-indigo-700
+        text-gray-500
+        hover:text-indigo-700
+        text-2xl
+        font-medium
+        transition-all;
+
+        & > svg {
+          @apply
+            h-10
+            w-10;
+        }
+    }
+  }
+}

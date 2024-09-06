@@ -1,0 +1,9 @@
+%section
+  .mb-8
+    = render partial: 'breadcrumbs'
+    %h1.inline-blockmb-2.text-3xl.font-extrabold.tracking-tight.text-gray-900 Checklists
+
+  %div{ data: { behavior: 'checklists-grid' } }
+    %checklists-grid{ 'v-bind': render(template: 'user_panel/checklists/index', formats: %i[json]) }
+
+  = vite_typescript_tag 'entrypoints/user_panel/checklists/grid.ts'

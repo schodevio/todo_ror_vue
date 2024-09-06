@@ -1,12 +1,11 @@
 <template>
-  <form @submit.prevent="handleSubmit" v-cloak>
+  <form @submit.prevent="handleSubmit">
     <InputField
       :errors="errors.email"
       label-for="user_email"
       label="E-mail"
       class="mb-3"
     >
-
       <InputText
         v-model="formData.email"
         :invalid="!!errors.email"

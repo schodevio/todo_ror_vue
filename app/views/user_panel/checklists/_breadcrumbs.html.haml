@@ -1,0 +1,18 @@
+%nav.breadcrumb.mb-3{ 'aria-label': 'breadcrumb' }
+  %ol.breadcrumb__list
+    %li.breadcrumb__item
+      = link_to user_panel_dashboard_path, class: 'breadcrumb__link' do
+        .flex.items-center.gap-2
+          %span= tabler_icon 'home'
+          %span Home
+    %li.breadcrumb__item
+      = link_to user_panel_checklists_path, class: 'breadcrumb__link' do
+        .flex.items-center.gap-2
+          %span= tabler_icon 'chevron_right'
+          %span Checklists
+    - if @checklist
+      %li.breadcrumb__item
+        = link_to user_panel_checklist_path(@checklist), class: 'breadcrumb__link' do
+          .flex.items-center.gap-2
+            %span= tabler_icon 'chevron_right'
+            %span= @checklist.name
