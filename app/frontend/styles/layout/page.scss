@@ -1,0 +1,28 @@
+@layer components {
+  .page {
+    &__header {
+      @apply
+        flex
+        items-start
+        mb-8;
+    }
+
+    &__title {
+      @apply
+        flex-1
+        inline-block
+        text-3xl
+        font-extrabold
+        tracking-tight
+        text-gray-900;
+    }
+
+    &__actions {
+      @apply
+        flex
+        flex-nowrap
+        items-center
+        gap-2;
+    }
+  }
+}

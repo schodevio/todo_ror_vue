@@ -1,8 +1,8 @@
 <template>
   <div class="checklist__grid">
-    <NewChecklistGridButton :links />
+    <NewChecklistButton :links />
 
-    <ChecklistsGridItem
+    <ChecklistsItem
       v-for="checklist in checklists.models"
       :key="checklist.id"
       :checklist
@@ -20,12 +20,8 @@ import type { TGridLinks } from '@components/user_panel/checklists/types'
 //- Composables
 import useChecklists from '@components/user_panel/checklists/composables/useChecklists'
 //- Components
-import ChecklistsGridItem from '@components/user_panel/checklists/ChecklistsGridItem.vue'
-import NewChecklistGridButton from '@components/user_panel/checklists/NewChecklistGridButton.vue'
-
-defineOptions({
-  name: 'ChecklistsGrid'
-})
+import ChecklistsItem from '@components/user_panel/checklists/ChecklistsItem.vue'
+import NewChecklistButton from '@components/user_panel/checklists/NewChecklistButton.vue'
 
 const props = defineProps({
   checklists: {
@@ -39,5 +35,5 @@ const props = defineProps({
 })
 
 const { checklists, fetchChecklists } = useChecklists(props.checklists)
-useEventListener(window, 'refresh:checklists', () => fetchChecklists(props.links.checklists_path))
+useEventListener(window, 'refresh:checklists:list', () => fetchChecklists(props.links.checklists_path))
 </script>

@@ -1,3 +1,19 @@
-%section
-  .pb-10.border-b.border-gray-200
+%section.page
+  .mb-8
     = render partial: 'breadcrumbs'
+    .page__header
+      .page__title{ data: { behavior: 'checklist-header' } }
+        %checklist-header{ 'v-bind': render(template: 'user_panel/checklists/show', formats: %i[json]) }
+          %h2= @checklist.name
+
+      = vite_typescript_tag 'entrypoints/user_panel/checklists/checklistHeader.ts'
+
+      .page__actions{ data: { behavior: 'checklist-actions' } }
+        %checklist-actions{ 'v-bind': render(template: 'user_panel/checklists/show', formats: %i[json]) }
+          .btn.btn--icon= tabler_icon 'dots_vertical'
+
+      = vite_typescript_tag 'entrypoints/user_panel/checklists/checklistActions.ts'
+
+  .board{ style: "background-image: url(#{@checklist.thumbnail_url})" }
+    .board__column.text-center
+      Tasks here.

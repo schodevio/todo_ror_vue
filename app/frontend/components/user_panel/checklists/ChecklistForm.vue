@@ -16,7 +16,7 @@
       />
     </InputField>
 
-    <div class="form__actions">
+    <div class="dialog__actions">
       <button
         @click="$emit('cancel:form')"
         type="button"
@@ -44,10 +44,6 @@ import type { TErrors } from '@components/shared/errors/types'
 //- Components
 import InputField from '@components/shared/fields/InputField.vue'
 import InputText from 'primevue/inputtext'
-
-defineOptions({
-  name: 'ChecklistForm'
-})
 
 const props = defineProps({
   checklist: {

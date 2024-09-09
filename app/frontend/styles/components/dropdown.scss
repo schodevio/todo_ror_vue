@@ -1,0 +1,22 @@
+@layer components {
+  .dropdown {
+    .p-popover-content {
+      @apply
+        p-1
+        min-w-44;
+    }
+
+    &__item > * {
+      @apply
+        flex
+        items-center
+        gap-2
+        px-4
+        py-2
+        w-full
+        text-left
+        text-gray-900
+        hover:bg-gray-100;
+    }
+  }
+}

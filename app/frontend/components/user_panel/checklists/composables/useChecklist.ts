@@ -33,12 +33,38 @@ export default (initialData: Partial<ChecklistModel> = {}) => {
     })
   }
 
+  const updateChecklist = (params: ChecklistModel['params']) => {
+    startLoading()
+    clearErrors()
+
+    return new Promise(resolve => {
+      useHTTP(state.checklist.links.checklist_path, { method: 'PUT', data: { checklist: params }})
+        .then(resolve)
+        .catch(error => setErrors(error.response.data.errors))
+        .finally(stopLoading)
+    })
+  }
+
+  const deleteChecklist = () => {
+    startLoading()
+    clearErrors()
+
+    return new Promise(resolve => {
+      useHTTP(state.checklist.links.checklist_path, { method: 'DELETE' })
+        .then(resolve)
+        .catch(error => setErrors(error.response.data.errors))
+        .finally(stopLoading)
+    })
+  }
+
   return {
     ...toRefs(state),
     loading,
     errors,
 
     setChecklist,
-    createChecklist
+    createChecklist,
+    updateChecklist,
+    deleteChecklist
   }
 }

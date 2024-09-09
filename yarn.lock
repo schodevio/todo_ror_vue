@@ -453,6 +453,18 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.21.2.tgz#e4291e3c1bc637083f87936c333cdbcad22af63b"
   integrity sha512-6UUxd0+SKomjdzuAcp+HAmxw1FlGBnl1v2yEPSabtx4lBfdXHDVsW7+lQkgz9cNFJGY3AWR7+V8P5BqkD9L9nA==
 
+"@tabler/icons-vue@^3.15.0":
+  version "3.15.0"
+  resolved "https://registry.yarnpkg.com/@tabler/icons-vue/-/icons-vue-3.15.0.tgz#958d1d842d867b2dc91dee3d1fcfbe23420127f1"
+  integrity sha512-C56PJxsGcK2ImIbHsQcvxxNWmEW7ERT4AxWBx3CfaUqIvV3RrV+pi9X48GJZXycJvZ8OlK9VBL/pw201TxynyQ==
+  dependencies:
+    "@tabler/icons" "3.15.0"
+
+"@tabler/icons@3.15.0":
+  version "3.15.0"
+  resolved "https://registry.yarnpkg.com/@tabler/icons/-/icons-3.15.0.tgz#4fb39ca456a14103edd950936fd98d150e82d007"
+  integrity sha512-Pzo7g8znsCgCcnSLCfukEV+kcfr0/VjBoCLXJtrOtaY94gtvYjWC2hrKzazf511asUflRuk/+dxztdKYJgpe4g==
+
 "@types/estree@1.0.5":
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-1.0.5.tgz#a6ce3e556e00fd9895dd872dd172ad0d4bd687f4"

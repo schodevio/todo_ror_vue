@@ -18,18 +18,10 @@ import { PropType } from 'vue'
 //- Models
 import { ChecklistModel } from '@components/user_panel/checklists/models/checklist'
 
-defineOptions({
-  name: 'ChecklistsGridItem'
-})
-
 defineProps({
   checklist: {
     type: ChecklistModel as PropType<ChecklistModel>,
     required: true
   }
 })
-
-const random = () => {
-  return Math.floor(Math.random() * 24)
-}
 </script>

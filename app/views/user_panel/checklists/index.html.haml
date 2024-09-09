@@ -1,9 +1,9 @@
-%section
+%section.page
   .mb-8
     = render partial: 'breadcrumbs'
-    %h1.inline-blockmb-2.text-3xl.font-extrabold.tracking-tight.text-gray-900 Checklists
+    %h1.page__title Checklists
 
   %div{ data: { behavior: 'checklists-grid' } }
     %checklists-grid{ 'v-bind': render(template: 'user_panel/checklists/index', formats: %i[json]) }
 
-  = vite_typescript_tag 'entrypoints/user_panel/checklists/grid.ts'
+  = vite_typescript_tag 'entrypoints/user_panel/checklists/checklistsGrid.ts'

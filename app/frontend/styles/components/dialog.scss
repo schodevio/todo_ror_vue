@@ -1,5 +1,16 @@
 @layer components {
-  .form {
+  .dialog {
+    @apply
+      w-full
+      max-w-xl;
+
+    &__row {
+      @apply
+        flex
+        items-start
+        gap-4;
+    }
+
     &__actions {
       @apply
         flex

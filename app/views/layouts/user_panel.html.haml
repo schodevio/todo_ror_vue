@@ -13,9 +13,9 @@
 
     = vite_stylesheet_tag 'application.scss'
     = vite_typescript_tag 'application.ts'
-  %body.antialiased.bg-white
+  %body.antialiased.bg-white.min-h-screen
     = render partial: 'layouts/user_panel/navbar'
     = render partial: 'layouts/user_panel/sidebar'
 
-    %main.p-4.ml-64.pt-20.h-auto
+    %main.p-4.ml-64.pt-20.min-h-screen
       = yield

@@ -27,13 +27,13 @@
 
   <teleport to="body">
     <Dialog
-      v-model:visible="dialogOpen"
+      v-model:visible="newDialogOpen"
       class="w-full max-w-2xl"
       header="New Checklist"
       modal
     >
       <ChecklistForm
-        @cancel:form="dialogOpen = false"
+        @cancel:form="newDialogOpen = false"
         @submit:form="handleSubmit"
         :checklist
         :errors
@@ -54,10 +54,6 @@ import useChecklist from '@components/user_panel/checklists/composables/useCheck
 import ChecklistForm from '@components/user_panel/checklists/ChecklistForm.vue'
 import Dialog from 'primevue/dialog'
 
-defineOptions({
-  name: 'NewChecklistGridItem'
-})
-
 const props = defineProps({
   links: {
     type: Object as PropType<TGridLinks>,
@@ -65,19 +61,19 @@ const props = defineProps({
   }
 })
 
-const dialogOpen = ref<boolean>(false)
+const newDialogOpen = ref<boolean>(false)
 const { checklist, errors, setChecklist, createChecklist } = useChecklist()
 
 const handleOpen = () => {
   setChecklist()
-  dialogOpen.value = true
+  newDialogOpen.value = true
 }
 
 const handleSubmit = (params: ChecklistModel['params']) => {
   createChecklist(props.links.checklists_path, params)
     .then(() => {
-      window.dispatchEvent(new CustomEvent('refresh:checklists'))
-      dialogOpen.value = false
+      window.dispatchEvent(new CustomEvent('refresh:checklists:list'))
+      newDialogOpen.value = false
     })
 }
 </script>
