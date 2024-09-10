@@ -6,6 +6,7 @@ import { ChecklistModel } from '@components/user_panel/checklists/models/checkli
 import useErrors from '@components/shared/errors/composables/useErrors'
 import useLoading from '@components/shared/loading/composables/useLoading'
 //- Utils
+import { objectToFormData } from '@utils/forms'
 import useHTTP from '@utils/useHTTP'
 
 export default (initialData: Partial<ChecklistModel> = {}) => {
@@ -25,8 +26,12 @@ export default (initialData: Partial<ChecklistModel> = {}) => {
     startLoading()
     clearErrors()
 
+    const checklistParams = params.thumbnail
+      ? objectToFormData(params, 'checklist')
+      : { checklist: params }
+
     return new Promise(resolve => {
-      useHTTP(path, { method: 'POST', data: { checklist: params }})
+      useHTTP(path, { method: 'POST', data: checklistParams, multipart: true })
         .then(resolve)
         .catch(error => setErrors(error.response.data.errors))
         .finally(stopLoading)
@@ -37,8 +42,12 @@ export default (initialData: Partial<ChecklistModel> = {}) => {
     startLoading()
     clearErrors()
 
+    const checklistParams = params.thumbnail
+      ? objectToFormData(params, 'checklist')
+      : { checklist: params }
+
     return new Promise(resolve => {
-      useHTTP(state.checklist.links.checklist_path, { method: 'PUT', data: { checklist: params }})
+      useHTTP(state.checklist.links.checklist_path, { method: 'PUT', data: checklistParams, multipart: true })
         .then(resolve)
         .catch(error => setErrors(error.response.data.errors))
         .finally(stopLoading)

@@ -16,6 +16,28 @@
       />
     </InputField>
 
+    <InputField
+      :errors="errors.thumbnail"
+      label-for="checklist_thumbnail"
+      label="Thumbnail"
+      class="mb-3"
+    >
+      <FileUpload
+        @select="handleFileSelect"
+        :show-upload-button="false"
+        :max-file-size="5242880"
+        name="checklist[thumbnail]"
+        accept="image/*"
+        mode="basic"
+      />
+
+      <img
+        v-if="fileUrl || checklist.links?.thumbnail_url"
+        :src="fileUrl || checklist.links?.thumbnail_url"
+        class="w-full max-w-80 rounded-lg mx-auto my-4"
+      />
+    </InputField>
+
     <div class="dialog__actions">
       <button
         @click="$emit('cancel:form')"
@@ -37,12 +59,14 @@
 
 <script lang="ts" setup>
 //- Libs
-import { PropType, reactive } from 'vue'
+import { PropType, reactive, shallowRef } from 'vue'
+import { useObjectUrl } from '@vueuse/core'
 //- Models
 import { ChecklistModel } from '@components/user_panel/checklists/models/checklist'
 import type { TErrors } from '@components/shared/errors/types'
 //- Components
 import InputField from '@components/shared/fields/InputField.vue'
+import FileUpload, { FileUploadSelectEvent } from 'primevue/fileupload'
 import InputText from 'primevue/inputtext'
 
 const props = defineProps({
@@ -61,8 +85,14 @@ const emit = defineEmits<{
   (e: 'cancel:form'): void
 }>()
 
+const file = shallowRef()
+const fileUrl = useObjectUrl(file)
 
 const formData = reactive<ChecklistModel['params']>({
   ...props.checklist.params
 })
+
+const handleFileSelect = (event: FileUploadSelectEvent) => {
+  formData.thumbnail = file.value = event.files[0]
+}
 </script>

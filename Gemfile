@@ -7,6 +7,7 @@ ruby '3.2.2'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'haml-rails'
+gem 'image_processing', '~> 1.2'
 gem 'jbuilder'
 gem 'pg', '~> 1.1'
 gem 'puma', '>= 5.0'
@@ -18,7 +19,6 @@ gem 'ulid-rails'
 gem 'vite_rails'
 
 # gem 'bcrypt', '~> 3.1.7'
-# gem 'image_processing', '~> 1.2'
 # gem 'kredis'
 # gem 'redis', '>= 4.0.1'
 

@@ -2,6 +2,8 @@ export class ChecklistModel {
   id: string
   name: string = ''
 
+  thumbnail?: File
+
   links: {
     checklist_path: string
     thumbnail_url: string
@@ -13,7 +15,8 @@ export class ChecklistModel {
 
   get params() {
     return {
-      name: this.name
+      name: this.name,
+      thumbnail: this.thumbnail
     }
   }
 }

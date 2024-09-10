@@ -39,7 +39,7 @@ module UserPanel
     end
 
     def checklist_params
-      params.require(:checklist).permit(:name)
+      params.require(:checklist).permit(:name, :thumbnail)
     end
   end
 end

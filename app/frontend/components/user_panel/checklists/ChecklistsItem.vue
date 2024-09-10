@@ -5,7 +5,7 @@
   >
     <div
       class="checklist__thumbnail"
-      :style="{ backgroundImage: `url(${checklist.links.thumbnail_url})` }"
+      :style="{ backgroundImage }"
     />
 
     <h3 class="checklist__title">{{ checklist.name }}</h3>
@@ -14,14 +14,20 @@
 
 <script lang="ts" setup>
 //- Libs
-import { PropType } from 'vue'
+import { PropType, computed } from 'vue'
 //- Models
 import { ChecklistModel } from '@components/user_panel/checklists/models/checklist'
 
-defineProps({
+const props = defineProps({
   checklist: {
     type: ChecklistModel as PropType<ChecklistModel>,
     required: true
   }
+})
+
+const backgroundImage = computed(() => {
+  const thumbnailUrl = props.checklist.links?.thumbnail_url
+
+  return thumbnailUrl ? `url(${thumbnailUrl})` : 'none'
 })
 </script>

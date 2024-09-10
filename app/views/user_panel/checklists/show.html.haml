@@ -2,11 +2,7 @@
   .mb-8
     = render partial: 'breadcrumbs'
     .page__header
-      .page__title{ data: { behavior: 'checklist-header' } }
-        %checklist-header{ 'v-bind': render(template: 'user_panel/checklists/show', formats: %i[json]) }
-          %h2= @checklist.name
-
-      = vite_typescript_tag 'entrypoints/user_panel/checklists/checklistHeader.ts'
+      %h2.page__title= @checklist.name
 
       .page__actions{ data: { behavior: 'checklist-actions' } }
         %checklist-actions{ 'v-bind': render(template: 'user_panel/checklists/show', formats: %i[json]) }
@@ -14,6 +10,6 @@
 
       = vite_typescript_tag 'entrypoints/user_panel/checklists/checklistActions.ts'
 
-  .board{ style: "background-image: url(#{@checklist.thumbnail_url})" }
+  .board{ style: "background-image: url(#{safe_attachment_path(@checklist.thumbnail)})" }
     .board__column.text-center
       Tasks here.

@@ -121,9 +121,15 @@ RSpec.describe UserPanel::ChecklistsController, type: :controller do
         it 'creates checklist' do
           user = create(:user)
 
+          file = fixture_file_upload(
+            Rails.root.join('spec/fixtures/sample_image.jpg'),
+            'image/jpg'
+          )
+
           params = {
             checklist: {
-              name: 'Sample Checklist'
+              name: 'Sample Checklist',
+              thumbnail: file
             }
           }
 
@@ -134,8 +140,14 @@ RSpec.describe UserPanel::ChecklistsController, type: :controller do
             user.reload
           end
 
-          expect(&action).to change(user.checklists, :count).by(1)
+          expect(&action)
+            .to change(user.checklists, :count)
+            .by(1)
+            .and change(ActiveStorage::Attachment, :count)
+            .by(1)
+
           expect(response).to have_http_status(:ok)
+          expect(user.checklists.last.thumbnail).to be_attached
         end
       end
 
@@ -184,10 +196,16 @@ RSpec.describe UserPanel::ChecklistsController, type: :controller do
             user = create(:user)
             checklist = create(:checklist, user: user, name: 'Old Name')
 
+            file = fixture_file_upload(
+              Rails.root.join('spec/fixtures/sample_image.jpg'),
+              'image/jpg'
+            )
+
             params = {
               id: checklist.id,
               checklist: {
-                name: 'New Name'
+                name: 'New Name',
+                thumbnail: file
               }
             }
 
@@ -198,7 +216,12 @@ RSpec.describe UserPanel::ChecklistsController, type: :controller do
               checklist.reload
             end
 
-            expect(&action).to change(checklist, :name).to('New Name')
+            expect(&action)
+              .to change(checklist, :name)
+              .to('New Name')
+              .and change(checklist.thumbnail, :attached?)
+              .to(true)
+
             expect(response).to have_http_status(:ok)
           end
         end

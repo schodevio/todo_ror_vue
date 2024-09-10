@@ -4,12 +4,10 @@ class Checklist < ApplicationRecord
   ## Associations
   belongs_to :user
 
+  has_one_attached :thumbnail
+
   ulid :user_id
 
   ## Validations
   validates :name, presence: true
-
-  def thumbnail_url
-    "https://picsum.photos/1280/960?random=#{rand(1000)}"
-  end
 end

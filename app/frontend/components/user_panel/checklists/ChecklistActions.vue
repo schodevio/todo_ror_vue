@@ -88,7 +88,6 @@
 <script lang="ts" setup>
 //- Libs
 import { PropType, ref } from 'vue'
-import { useBrowserLocation } from '@vueuse/core'
 //- Models
 import { ChecklistModel } from '@components/user_panel/checklists/models/checklist'
 import type { TGridLinks } from '@components/user_panel/checklists/types'
@@ -129,8 +128,6 @@ const {
   deleteChecklist
 } = useChecklist(props.checklist)
 
-const location = useBrowserLocation()
-
 //- Edit
 const handleEdit = () => {
   setChecklist(props.checklist)
@@ -139,12 +136,7 @@ const handleEdit = () => {
 
 const handleSubmit = (params: ChecklistModel['params']) => {
   updateChecklist(params)
-    .then((response: any) => {
-      const detail = response.data.value.checklist as ChecklistModel
-
-      window.dispatchEvent(new CustomEvent('refresh:checklists:item', { detail }))
-      editDialogOpen.value = false
-    })
+    .then(() => window.location.reload())
 }
 
 //- Delete
@@ -155,6 +147,6 @@ const handleDelete = () => {
 
 const confirmDelete = () => {
   deleteChecklist()
-    .then(() => location.value.pathname = props.links.checklists_path)
+    .then(() => window.location.pathname = props.links.checklists_path)
 }
 </script>
