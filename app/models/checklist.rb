@@ -4,7 +4,8 @@ class Checklist < ApplicationRecord
   ## Associations
   belongs_to :user
 
-  has_one_attached :thumbnail
+  has_one_attached :thumbnail, dependent: :destroy
+  has_many :tasks, dependent: :destroy
 
   ulid :user_id
 

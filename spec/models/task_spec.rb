@@ -2,11 +2,9 @@
 
 require 'rails_helper'
 
-RSpec.describe Checklist, type: :model do
+RSpec.describe Task, type: :model do
   describe 'associations' do
-    it { is_expected.to belong_to(:user) }
-
-    it { is_expected.to have_many(:tasks).dependent(:destroy) }
+    it { is_expected.to belong_to(:checklist) }
   end
 
   describe 'validations' do
