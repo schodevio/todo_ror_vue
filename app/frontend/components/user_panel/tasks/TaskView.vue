@@ -10,7 +10,7 @@
     <div v-else class="task-view__wrapper">
       <div class="task-view__header">
         <div class="task-view__title">
-          <span>{{ task.name }}</span>
+          <span>{{ props.task.name }}</span>
         </div>
 
         <div class="task-view__actions">
@@ -25,6 +25,7 @@
 
           <button
             v-tooltip.bottom="'Delete'"
+            @click="deleteDialogOpen = true"
             class="btn btn--icon"
             type="button"
           >
@@ -34,10 +35,43 @@
       </div>
 
       <div class="task-view__content">
-        <p>{{ task.description }}</p>
+        <p>{{ props.task.description }}</p>
       </div>
     </div>
   </div>
+
+  <teleport to="body">
+    <Dialog
+      v-model:visible="deleteDialogOpen"
+      header="Delete Task"
+      class="dialog"
+      modal
+    >
+      <div class="dialog__row">
+        <IconAlertHexagon width="36" class="text-red-600" />
+
+        <p>Are you sure you want to delete the <strong>{{ props.task.name }}</strong> task?</p>
+      </div>
+
+      <div class="dialog__actions">
+        <button
+          @click="deleteDialogOpen = false"
+          type="button"
+          class="btn"
+        >
+          Cancel
+        </button>
+
+        <button
+          @click="confirmDelete"
+          class="btn btn--danger"
+          type="button"
+        >
+          Delete Task
+        </button>
+      </div>
+    </Dialog>
+  </teleport>
 </template>
 
 <script lang="ts" setup>
@@ -45,9 +79,17 @@
 import { PropType, ref, watch } from 'vue'
 //- Models
 import { TaskModel } from '@components/user_panel/tasks/models/task'
+//- Composables
+import useTask from '@components/user_panel/tasks/composables/useTask'
 //- Components
 import TaskForm from '@components/user_panel/tasks/TaskForm.vue'
-import { IconPencil, IconTrash } from '@tabler/icons-vue'
+import Dialog from 'primevue/dialog'
+
+import {
+  IconAlertHexagon,
+  IconPencil,
+  IconTrash
+} from '@tabler/icons-vue'
 
 const props = defineProps({
   task: {
@@ -56,10 +98,23 @@ const props = defineProps({
   }
 })
 
+//- Edit task
 const editMode = ref<boolean>(false)
 
 watch(
   () => props.task,
   () => editMode.value = false
 )
+
+//- Delete task
+const deleteDialogOpen = ref<boolean>(false)
+const { deleteTask } = useTask(props.task)
+
+const confirmDelete = () => {
+  deleteTask()
+    .then(() => {
+      window.dispatchEvent(new CustomEvent('refresh:tasks:collection'))
+      window.dispatchEvent(new CustomEvent('show:task', { detail: {} }))
+    })
+}
 </script>

@@ -45,7 +45,8 @@ const props = defineProps({
   }
 })
 
-const { task, updateTask } = useTask(props.task)
+//- (Un)complete task
+const { updateTask } = useTask(props.task)
 
 const handleCompletedChange = (event: Event) => {
   const completed = (event.target as HTMLInputElement).checked
@@ -54,7 +55,8 @@ const handleCompletedChange = (event: Event) => {
     .then(() => window.dispatchEvent(new CustomEvent('refresh:tasks:collection')))
 }
 
+//- Show task
 const handleButtonClick = () => {
-  window.dispatchEvent(new CustomEvent('show:task', { detail: task.value }))
+  window.dispatchEvent(new CustomEvent('show:task', { detail: props.task }))
 }
 </script>

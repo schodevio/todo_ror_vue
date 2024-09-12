@@ -14,7 +14,7 @@ export default (initialData?: TaskModel[]) => {
     state.tasks = new TasksCollection(items)
   }
 
-  const fetchTasks = (path: string) => {
+  const fetchTasks = async (path: string) => {
     useHTTP(path, { method: 'GET' })
       .then(response => setTasks(response.data.value.tasks))
   }

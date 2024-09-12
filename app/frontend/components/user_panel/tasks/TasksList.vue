@@ -2,8 +2,8 @@
   <Draggable
     :list="tasks"
     @change="handlePositionChange"
-    class="tasks-list"
     handle=".tasks-list-item__handle"
+    class="tasks-list"
     item-key="id"
   >
     <template #item="{ element }">

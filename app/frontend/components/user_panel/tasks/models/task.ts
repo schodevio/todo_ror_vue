@@ -29,8 +29,4 @@ export class TasksCollection {
   constructor(items: TaskModel[] = []) {
     this.models = items.map(item => new TaskModel(item))
   }
-
-  replaceTask(item: TaskModel) {
-    this.models = this.models.map(model => model.id === item.id ? new TaskModel(item) : model)
-  }
 }

@@ -45,8 +45,8 @@
       </button>
 
       <button
-        type="submit"
         class="btn btn--primary"
+        type="submit"
       >
         Save Task
       </button>
@@ -77,7 +77,8 @@ const emit = defineEmits<{
   (e: 'close:form'): void
 }>()
 
-const { task, errors, updateTask} = useTask(props.task)
+//- Update task
+const { task, errors, updateTask } = useTask(props.task)
 
 const handleSubmit = () => {
   updateTask(task.value.params)

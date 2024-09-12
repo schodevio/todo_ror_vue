@@ -37,7 +37,7 @@ module UserPanel
     private
 
     def checklist
-      @checklist ||= current_user.checklists.includes(:tasks).find(params[:id])
+      @checklist ||= current_user.checklists.find(params[:id])
     end
 
     def checklist_params

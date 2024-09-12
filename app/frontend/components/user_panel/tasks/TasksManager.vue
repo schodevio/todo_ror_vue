@@ -48,11 +48,11 @@ const props = defineProps({
   }
 })
 
-//- Tasks Collection
+//- Tasks collection
 const { tasks, fetchTasks } = useTasks(props.tasks)
 useEventListener(window, 'refresh:tasks:collection', () => fetchTasks(props.links.tasks_path))
 
-//- Single Task
+//- Single task
 const { task, setTask } = useTask()
 useEventListener(window, 'show:task', (event: CustomEvent) => setTask(event.detail))
 </script>
