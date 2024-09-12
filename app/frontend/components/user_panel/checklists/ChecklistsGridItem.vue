@@ -1,14 +1,14 @@
 <template>
   <a
-    :href="checklist.links.checklist_path"
-    class="checklist-item"
+    :href="props.checklist.links.checklist_path"
+    class="checklists-grid-item"
   >
     <div
-      class="checklist-item__thumbnail"
-      :style="{ backgroundImage }"
+      class="checklists-grid-item__thumbnail"
+      :style="styles"
     />
 
-    <h3 class="checklist-item__title">{{ checklist.name }}</h3>
+    <h3 class="checklists-grid-item__title">{{ props.checklist.name }}</h3>
   </a>
 </template>
 
@@ -25,9 +25,11 @@ const props = defineProps({
   }
 })
 
-const backgroundImage = computed(() => {
+const styles = computed(() => {
   const thumbnailUrl = props.checklist.links?.thumbnail_url
 
-  return thumbnailUrl ? `url(${thumbnailUrl})` : 'none'
+  return {
+    backgroundImage: thumbnailUrl ? `url(${thumbnailUrl})` : 'none'
+  }
 })
 </script>

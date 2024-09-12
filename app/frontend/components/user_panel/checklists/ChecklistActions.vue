@@ -36,11 +36,11 @@
   <teleport to="body">
     <Dialog
       v-model:visible="editDialogOpen"
-      class="dialog max-w-2xl"
       header="Edit Checklist"
+      class="dialog max-w-2xl"
       modal
     >
-      <ChecklistForm
+      <ChecklistFormBody
         @cancel:form="editDialogOpen = false"
         @submit:form="handleSubmit"
         :checklist
@@ -50,8 +50,8 @@
 
     <Dialog
       v-model:visible="deleteDialogOpen"
-      class="dialog"
       header="Delete Checklist"
+      class="dialog"
       modal
     >
       <div class="dialog__row">
@@ -90,11 +90,11 @@
 import { PropType, ref } from 'vue'
 //- Models
 import { ChecklistModel } from '@components/user_panel/checklists/models/checklist'
-import type { TGridLinks } from '@components/user_panel/checklists/types'
+import type { TChecklistsLinks } from '@components/user_panel/checklists/types'
 //- Composables
 import useChecklist from '@components/user_panel/checklists/composables/useChecklist'
 //- Components
-import ChecklistForm from '@components/user_panel/checklists/ChecklistForm.vue'
+import ChecklistFormBody from '@components/user_panel/checklists/ChecklistFormBody.vue'
 import Dialog from 'primevue/dialog'
 import Popover from 'primevue/popover'
 
@@ -111,14 +111,12 @@ const props = defineProps({
     required: true
   },
   links: {
-    type: Object as PropType<TGridLinks>,
+    type: Object as PropType<TChecklistsLinks>,
     required: true
   }
 })
 
 const actionsPopover = ref<typeof Popover>()
-const editDialogOpen = ref<boolean>(false)
-const deleteDialogOpen = ref<boolean>(false)
 
 const {
   checklist,
@@ -128,7 +126,9 @@ const {
   deleteChecklist
 } = useChecklist(props.checklist)
 
-//- Edit
+//- Edit checklist
+const editDialogOpen = ref<boolean>(false)
+
 const handleEdit = () => {
   setChecklist(props.checklist)
   editDialogOpen.value = true
@@ -139,7 +139,9 @@ const handleSubmit = (params: ChecklistModel['params']) => {
     .then(() => window.location.reload())
 }
 
-//- Delete
+//- Delete checklist
+const deleteDialogOpen = ref<boolean>(false)
+
 const handleDelete = () => {
   setChecklist(props.checklist)
   deleteDialogOpen.value = true

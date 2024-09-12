@@ -68,7 +68,7 @@ import Textarea from 'primevue/textarea'
 
 const props = defineProps({
   task: {
-    type: Object as PropType<TaskModel>,
+    type: TaskModel as PropType<TaskModel>,
     required: true
   }
 })

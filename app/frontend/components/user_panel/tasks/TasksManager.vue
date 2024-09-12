@@ -2,7 +2,7 @@
   <div class="tasks-manager">
     <div class="tasks-manager__col">
       <div class="tasks-manager__form">
-        <NewTaskForm :links />
+        <NewTaskForm :links="props.links" />
       </div>
 
       <div class="tasks-manager__list">

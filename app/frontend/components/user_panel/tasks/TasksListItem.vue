@@ -40,7 +40,7 @@ import { IconGripVertical } from '@tabler/icons-vue'
 
 const props = defineProps({
   task: {
-    type: Object as PropType<TaskModel>,
+    type: TaskModel as PropType<TaskModel>,
     required: true
   }
 })

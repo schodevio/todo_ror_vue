@@ -1,7 +1,7 @@
 <template>
   <div class="task-view">
     <div v-if="editMode" class="task-view__form">
-      <TaskForm
+      <EditTaskForm
         @close:form="editMode = false"
         :task
       />
@@ -82,7 +82,7 @@ import { TaskModel } from '@components/user_panel/tasks/models/task'
 //- Composables
 import useTask from '@components/user_panel/tasks/composables/useTask'
 //- Components
-import TaskForm from '@components/user_panel/tasks/TaskForm.vue'
+import EditTaskForm from '@components/user_panel/tasks/EditTaskForm.vue'
 import Dialog from 'primevue/dialog'
 
 import {
@@ -93,7 +93,7 @@ import {
 
 const props = defineProps({
   task: {
-    type: Object as PropType<TaskModel>,
+    type: TaskModel as PropType<TaskModel>,
     required: true
   }
 })

@@ -1,7 +1,7 @@
 <template>
   <button
     @click="handleOpen"
-    class="checklist-new"
+    class="checklist-new-btn"
     type="button"
   >
     <IconHexagonPlus width="24" />
@@ -15,7 +15,7 @@
       header="New Checklist"
       modal
     >
-      <ChecklistForm
+      <ChecklistFormBody
         @cancel:form="newDialogOpen = false"
         @submit:form="handleSubmit"
         :checklist
@@ -30,22 +30,23 @@
 import { PropType, ref } from 'vue'
 //- Models
 import { ChecklistModel } from '@components/user_panel/checklists/models/checklist'
-import type { TGridLinks } from '@components/user_panel/checklists/types'
+import type { TChecklistsLinks } from '@components/user_panel/checklists/types'
 //- Composables
 import useChecklist from '@components/user_panel/checklists/composables/useChecklist'
 //- Components
-import ChecklistForm from '@components/user_panel/checklists/ChecklistForm.vue'
+import ChecklistFormBody from '@components/user_panel/checklists/ChecklistFormBody.vue'
 import Dialog from 'primevue/dialog'
 
 import { IconHexagonPlus } from '@tabler/icons-vue'
 
 const props = defineProps({
   links: {
-    type: Object as PropType<TGridLinks>,
+    type: Object as PropType<TChecklistsLinks>,
     required: true
   }
 })
 
+//- Create checklist
 const newDialogOpen = ref<boolean>(false)
 const { checklist, errors, setChecklist, createChecklist } = useChecklist()
 

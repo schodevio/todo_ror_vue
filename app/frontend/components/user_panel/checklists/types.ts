@@ -1,3 +1,3 @@
-export type TGridLinks = {
+export type TChecklistsLinks = {
   checklists_path: string
 }
