@@ -10,6 +10,8 @@
 
       = vite_typescript_tag 'entrypoints/user_panel/checklists/checklistActions.ts'
 
-  .board{ style: "background-image: url(#{safe_attachment_path(@checklist.thumbnail)})" }
-    .board__column.text-center
-      Tasks here.
+  .page__content
+    .checklist-board{ data: { behavior: 'tasks-manager' }, style: "background-image: url(#{safe_attachment_path(@checklist.thumbnail)})" }
+      %tasks-manager{ 'v-bind': render(template: 'user_panel/checklists/tasks/index', formats: %i[json]) }
+
+    = vite_typescript_tag 'entrypoints/user_panel/tasks/tasksManager.ts'

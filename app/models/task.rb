@@ -8,4 +8,7 @@ class Task < ApplicationRecord
 
   ## Validations
   validates :name, presence: true
+
+  ## Position
+  positioned on: :checklist
 end

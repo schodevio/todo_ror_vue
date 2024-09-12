@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="$emit('submit:form', formData)">
+  <form @submit.prevent="emit('submit:form', formData)">
     <InputField
       :errors="errors.name"
       label-for="checklist_name"

@@ -21,7 +21,7 @@ export class ChecklistModel {
   }
 }
 
-export class ChecklistsList {
+export class ChecklistsCollection {
   models: ChecklistModel[]
 
   constructor(items: ChecklistModel[] = []) {

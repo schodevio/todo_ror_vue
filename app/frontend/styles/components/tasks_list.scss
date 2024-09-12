@@ -1,0 +1,8 @@
+@layer components {
+  .tasks-list {
+    @apply
+      flex
+      flex-col
+      gap-2;
+  }
+}

@@ -28,13 +28,11 @@
 
     .flex.flex-row.mb-16.justify-center.space-y-0.space-x-4
       = link_to '#', class: 'btn btn--primary' do
-        .flex.items-center.gap-2
-          %span Get Started for Free
-          %span= tabler_icon 'arrow_right'
+        %span Get Started for Free
+        = tabler_icon 'arrow_right'
       = link_to '#', class: 'btn' do
-        .flex.items-center.gap-2
-          %span= tabler_icon 'video'
-          %span Watch Video
+        = tabler_icon 'video'
+        %span Watch Video
 
     .flex.justify-center.mt-48
       = link_to '#about', class: 'btn btn--icon btn--primary animate-bounce' do

@@ -14,9 +14,12 @@
       font-medium
       text-sm
       text-center
-      inline-block
       py-2.5
-      px-5;
+      px-5
+      inline-flex
+      justify-center
+      items-center
+      gap-2;
 
     &--primary {
       @apply

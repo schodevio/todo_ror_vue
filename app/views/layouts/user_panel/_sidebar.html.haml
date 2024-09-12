@@ -3,22 +3,18 @@
     %ul.sidebar__nav
       %li
         = link_to user_panel_dashboard_path, class: 'sidebar__nav-link active' do
-          .flex.items-center.gap-2
-            %span= tabler_icon 'home'
-            %span Home
+          = tabler_icon 'home'
+          %span Home
       %li
         = link_to user_panel_checklists_path, class: 'sidebar__nav-link' do
-          .flex.items-center.gap-2
-            %span= tabler_icon 'list_details'
-            %span Checklists
+          = tabler_icon 'list_details'
+          %span Checklists
     %ul.sidebar__nav
       %li
         = link_to '#', class: 'sidebar__nav-link' do
-          .flex.items-center.gap-2
-            %span= tabler_icon 'settings'
-            %span Settings
+          = tabler_icon 'settings'
+          %span Settings
       %li
         = link_to '#', class: 'sidebar__nav-link' do
-          .flex.items-center.gap-2
-            %span= tabler_icon 'user_hexagon'
-            %span Profile
+          = tabler_icon 'user_hexagon'
+          %span Profile

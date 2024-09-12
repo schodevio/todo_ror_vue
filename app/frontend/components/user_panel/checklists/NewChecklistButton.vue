@@ -1,7 +1,7 @@
 <template>
   <button
     @click="handleOpen"
-    class="checklist__new-button"
+    class="checklist-new"
     type="button"
   >
     <IconHexagonPlus width="24" />
@@ -57,7 +57,7 @@ const handleOpen = () => {
 const handleSubmit = (params: ChecklistModel['params']) => {
   createChecklist(props.links.checklists_path, params)
     .then(() => {
-      window.dispatchEvent(new CustomEvent('refresh:checklists:list'))
+      window.dispatchEvent(new CustomEvent('refresh:checklists:collection'))
       newDialogOpen.value = false
     })
 }

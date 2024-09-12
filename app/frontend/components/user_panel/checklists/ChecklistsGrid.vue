@@ -1,5 +1,5 @@
 <template>
-  <div class="checklist__grid">
+  <div class="checklists-grid">
     <NewChecklistButton :links />
 
     <ChecklistsItem
@@ -35,5 +35,5 @@ const props = defineProps({
 })
 
 const { checklists, fetchChecklists } = useChecklists(props.checklists)
-useEventListener(window, 'refresh:checklists:list', () => fetchChecklists(props.links.checklists_path))
+useEventListener(window, 'refresh:checklists:collection', () => fetchChecklists(props.links.checklists_path))
 </script>

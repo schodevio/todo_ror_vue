@@ -1,14 +1,14 @@
 <template>
   <a
     :href="checklist.links.checklist_path"
-    class="checklist__item"
+    class="checklist-item"
   >
     <div
-      class="checklist__thumbnail"
+      class="checklist-item__thumbnail"
       :style="{ backgroundImage }"
     />
 
-    <h3 class="checklist__title">{{ checklist.name }}</h3>
+    <h3 class="checklist-item__title">{{ checklist.name }}</h3>
   </a>
 </template>
 

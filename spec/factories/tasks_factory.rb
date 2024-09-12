@@ -9,7 +9,7 @@ FactoryBot.define do
     checklist { nil }
 
     trait :with_checklist do
-      checklist
+      association :checklist, :with_user
     end
   end
 end

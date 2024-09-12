@@ -5,13 +5,15 @@ module UserPanel
     respond_to :html, :json
 
     def index
-      @checklists = current_user.checklists.order(created_at: :desc)
+      @checklists = current_user.checklists.order(created_at: :desc).with_attached_thumbnail
 
       respond_with @checklists
     end
 
     def show
-      checklist
+      @tasks = checklist.tasks
+
+      respond_with checklist
     end
 
     def create
@@ -23,7 +25,7 @@ module UserPanel
     def update
       checklist.update(checklist_params)
 
-      respond_with @checklist
+      respond_with checklist
     end
 
     def destroy
@@ -35,7 +37,7 @@ module UserPanel
     private
 
     def checklist
-      @checklist ||= current_user.checklists.find(params[:id])
+      @checklist ||= current_user.checklists.includes(:tasks).find(params[:id])
     end
 
     def checklist_params

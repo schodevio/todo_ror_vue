@@ -12,5 +12,7 @@ class CreateTasks < ActiveRecord::Migration[7.1]
 
       t.timestamps
     end
+
+    add_index :tasks, %i[checklist_id position], unique: true
   end
 end

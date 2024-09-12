@@ -8,6 +8,5 @@
 
       = form_with url: destroy_user_session_path, method: :delete do |f|
         = f.button type: 'submit', class: 'btn' do
-          .flex.items-center.gap-2
-            %span= tabler_icon 'logout'
-            %span Logout
+          = tabler_icon 'logout'
+          %span Logout

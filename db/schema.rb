@@ -58,6 +58,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_10_111842) do
     t.boolean "completed", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["checklist_id", "position"], name: "index_tasks_on_checklist_id_and_position", unique: true
     t.index ["checklist_id"], name: "index_tasks_on_checklist_id"
   end
 

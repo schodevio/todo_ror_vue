@@ -20,8 +20,8 @@ RSpec.describe UserPanel::ChecklistsController, type: :controller do
       context 'when html format' do
         it 'renders index html view' do
           user = create(:user)
-
           checklist1, checklist2 = create_list(:checklist, 2, user: user)
+
           create(:checklist, :with_user)
 
           sign_in user
@@ -35,8 +35,8 @@ RSpec.describe UserPanel::ChecklistsController, type: :controller do
       context 'when json format' do
         it 'renders index json view' do
           user = create(:user)
-
           checklist1, checklist2 = create_list(:checklist, 2, user: user)
+
           create(:checklist, :with_user)
 
           sign_in user
@@ -194,7 +194,7 @@ RSpec.describe UserPanel::ChecklistsController, type: :controller do
         context 'when valid params' do
           it 'updates checklist' do
             user = create(:user)
-            checklist = create(:checklist, user: user, name: 'Old Name')
+            checklist = create(:checklist, user: user, name: 'Old Checklist Name')
 
             file = fixture_file_upload(
               Rails.root.join('spec/fixtures/sample_image.jpg'),
@@ -204,7 +204,7 @@ RSpec.describe UserPanel::ChecklistsController, type: :controller do
             params = {
               id: checklist.id,
               checklist: {
-                name: 'New Name',
+                name: 'New Checklist Name',
                 thumbnail: file
               }
             }
@@ -218,7 +218,7 @@ RSpec.describe UserPanel::ChecklistsController, type: :controller do
 
             expect(&action)
               .to change(checklist, :name)
-              .to('New Name')
+              .to('New Checklist Name')
               .and change(checklist.thumbnail, :attached?)
               .to(true)
 
@@ -229,7 +229,7 @@ RSpec.describe UserPanel::ChecklistsController, type: :controller do
         context 'when invalid params' do
           it 'does not update checklist and responds with errors' do
             user = create(:user)
-            checklist = create(:checklist, user: user, name: 'Old Name')
+            checklist = create(:checklist, user: user, name: 'Old Checklist Name')
 
             params = {
               id: checklist.id,

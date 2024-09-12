@@ -1,0 +1,38 @@
+@layer components {
+  .task-view {
+    @apply
+      p-4
+      rounded-lg
+      bg-white;
+
+    &__header {
+      @apply
+        flex
+        items-start
+        mb-4;
+    }
+
+    &__title {
+      @apply
+        flex-1
+        text-2xl
+        font-semibold
+        text-gray-900;
+    }
+
+    &__actions {
+      @apply
+        flex
+        justify-end
+        items-center
+        gap-2;
+    }
+
+    &__content {
+      @apply
+        text-base
+        leading-7
+        text-slate-800;
+    }
+  }
+}
