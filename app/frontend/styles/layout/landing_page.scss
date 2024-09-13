@@ -1,0 +1,57 @@
+@layer components {
+  .landing-page {
+    header,
+    section,
+    footer {
+      @apply
+        bg-white;
+    }
+
+    &__hero {
+      @apply
+        container
+        min-h-screen
+        mx-auto
+        pt-48
+        pb-32
+        px-12
+        relative;
+    }
+
+    &__title {
+      @apply
+        mb-6
+        text-6xl
+        font-extrabold
+        tracking-tight
+        leading-none
+        text-gray-900;
+    }
+
+    &__subtitle {
+      @apply
+        mb-8
+        px-16
+        text-xl
+        font-normal
+        text-gray-500;
+    }
+
+    &__section {
+      @apply
+        container
+        mx-auto
+        py-16
+        px-12;
+    }
+
+    &__section-title {
+      @apply
+        mb-16
+        text-4xl
+        tracking-tight
+        font-extrabold
+        text-gray-900;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 @layer components {
-  .breadcrumb-item {
+  .breadcrumbs-list-item {
     @apply
       inline-flex
       items-center;
@@ -8,17 +8,11 @@
       @apply
         inline-flex
         items-center
+        gap-2
         text-sm
         font-medium
         text-gray-700
         hover:text-indigo-600;
-    }
-
-    &__content {
-      @apply
-        flex
-        items-center
-        gap-2;
     }
   }
 }

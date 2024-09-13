@@ -31,6 +31,16 @@
         focus:ring-indigo-300;
     }
 
+    &--success {
+      @apply
+        text-white
+        bg-green-700
+        border-green-700
+        hover:text-white
+        hover:bg-green-800
+        focus:ring-green-300;
+    }
+
     &--danger {
       @apply
         text-white
@@ -39,6 +49,16 @@
         hover:text-white
         hover:bg-red-800
         focus:ring-red-300;
+    }
+
+    &--warning {
+      @apply
+        text-white
+        bg-yellow-400
+        border-yellow-400
+        hover:text-white
+        hover:bg-yellow-500
+        focus:ring-yellow-300;
     }
 
     &--icon {

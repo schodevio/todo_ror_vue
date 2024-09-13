@@ -4,7 +4,7 @@
 
 @import '../styles/base/base';
 
-@import '../styles/components/breadcrumb_item';
+@import '../styles/components/breadcrumbs_list_item';
 @import '../styles/components/breadcrumbs_list';
 @import '../styles/components/btn';
 @import '../styles/components/checklist_board';
@@ -13,15 +13,21 @@
 @import '../styles/components/checklists_grid';
 @import '../styles/components/dialog';
 @import '../styles/components/dropdown';
-@import '../styles/components/faq_item';
-@import '../styles/components/feature';
+@import '../styles/components/faqs_grid_item';
+@import '../styles/components/faqs_grid';
+@import '../styles/components/features_grid_item';
+@import '../styles/components/features_grid';
 @import '../styles/components/navbar';
 @import '../styles/components/sidebar';
-@import '../styles/components/social_item';
+@import '../styles/components/socials_list_item';
+@import '../styles/components/socials_list';
+@import '../styles/components/stats_grid_item';
+@import '../styles/components/stats_grid';
 @import '../styles/components/task_view';
 @import '../styles/components/tasks_list_item';
 @import '../styles/components/tasks_list';
 @import '../styles/components/tasks_manager';
 @import '../styles/components/testimonial';
 
+@import '../styles/layout/landing_page';
 @import '../styles/layout/page';

@@ -1,0 +1,10 @@
+@layer components {
+  .stats-grid {
+    @apply
+      grid
+      grid-cols-4
+      gap-8
+      mx-auto
+      text-gray-900;
+  }
+}

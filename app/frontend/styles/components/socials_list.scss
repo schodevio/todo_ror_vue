@@ -1,0 +1,10 @@
+@layer components {
+  .socials-list {
+    @apply
+      flex
+      flex-row
+      justify-center
+      items-center
+      gap-8;
+  }
+}

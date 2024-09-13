@@ -20,212 +20,212 @@
           %li= link_to 'Sign Up', new_user_registration_path, class: 'btn btn--primary'
           %li= link_to 'Sign In', new_user_session_path, class: 'btn btn'
 
-%header#home.bg-white
-  .container.min-h-screen.mx-auto.pt-48.pb-32.px-12.relative
-    %hgroup.text-center
-      %h1.mb-6.text-6xl.font-extrabold.tracking-tight.leading-none.text-gray-900 Stay Organized, Stay Productive
-      %h3.mb-8.text-xl.font-normal.text-gray-500.px-16 Manage your tasks effortlessly with [App Name] - your ultimate ToDo app for personal and professional productivity.
+.landing-page
+  %header#home
+    .landing-page__hero
+      %hgroup.text-center
+        %h1.landing-page__title Stay Organized, Stay Productive
+        %h3.landing-page__subtitle Manage your tasks effortlessly with [App Name] - your ultimate ToDo app for personal and professional productivity.
 
-    .flex.flex-row.mb-16.justify-center.space-y-0.space-x-4
-      = link_to '#', class: 'btn btn--primary' do
-        %span Get Started for Free
-        = tabler_icon 'arrow_right'
-      = link_to '#', class: 'btn' do
-        = tabler_icon 'video'
-        %span Watch Video
+      .flex.flex-row.mb-16.justify-center.space-y-0.space-x-4
+        = link_to '#', class: 'btn btn--primary' do
+          %span Get Started for Free
+          = tabler_icon 'arrow_right'
+        = link_to '#', class: 'btn' do
+          = tabler_icon 'video'
+          %span Watch Video
 
-    .flex.justify-center.mt-48
-      = link_to '#about', class: 'btn btn--icon btn--primary animate-bounce' do
-        = tabler_icon 'arrow_down'
+      .flex.justify-center.mt-48
+        = link_to '#about', class: 'btn btn--icon btn--primary animate-bounce' do
+          = tabler_icon 'arrow_down'
 
-%section#about.bg-white
-  .container.mx-auto.py-16.px-12
-    .mb-16
-      %h2.mb-4.text-4xl.tracking-tight.font-extrabold.text-gray-900 What is [App Name]?
+  %section#about
+    .landing-page__section
+      %h2.landing-page__section-title What is [App Name]?
 
-    %p.mb-16.text-gray-500.text-lg.text-gray-400 [App Name] is a simple yet powerful ToDo app designed to help you organize your day, manage your tasks, and boost your productivity. Whether you're planning your day-to-day activities, managing work projects, or creating grocery lists, [App Name] has everything you need to stay on top of your tasks and achieve your goals.
+      %p.mb-16.text-gray-500.text-lg.text-gray-400 [App Name] is a simple yet powerful ToDo app designed to help you organize your day, manage your tasks, and boost your productivity. Whether you're planning your day-to-day activities, managing work projects, or creating grocery lists, [App Name] has everything you need to stay on top of your tasks and achieve your goals.
 
-    %dl.grid.grid-cols-4.gap-8.mx-auto.text-gray-900
-      .flex.flex-col.justify-content.items-center
-        %dt.mb-2.text-4xl.font-extrabold 100K +
-        %dd.font-light.text-gray-500 users
-      .flex.flex-col.justify-content.items-center
-        %dt.mb-2.text-4xl.font-extrabold 2M +
-        %dd.font-light.text-gray-500 checklists
-      .flex.flex-col.justify-content.items-center
-        %dt.mb-2.text-4xl.font-extrabold 16M +
-        %dd.font-light.text-gray-500 tasks
-      .flex.flex-col.justify-content.items-center
-        %dt.mb-2.text-4xl.font-extrabold ≈ 99%
-        %dd.font-light.text-gray-500 satisfied users
+      %dl.stats-grid
+        .stats-grid-item
+          %dt.stats-grid-item__value 100K +
+          %dd.stats-grid-item__text users
+        .stats-grid-item
+          %dt.stats-grid-item__value 2M +
+          %dd.stats-grid-item__text checklists
+        .stats-grid-item
+          %dt.stats-grid-item__value 16M +
+          %dd.stats-grid-item__text tasks
+        .stats-grid-item
+          %dt.stats-grid-item__value ≈ 99%
+          %dd.stats-grid-item__text satisfied users
 
-%section#features.bg-white
-  .container.mx-auto.py-16.px-12
-    .mb-16
-      %h2.mb-4.text-4xl.tracking-tight.font-extrabold.text-gray-900 What Makes Us Unique?
+  %section#features
+    .landing-page__section
+      .mb-16
+        %h2.landing-page__section-title What Makes Us Unique?
 
-    .grid.grid-cols-3.gap-12.space-y-0
-      .feature
-        .feature__icon
-          = tabler_icon 'app_window'
-        %h4.feature__title Easy-to-Use Interface
-        %p.feature__body A clean, intuitive design that makes adding, editing, and completing tasks a breeze.
+      .features-grid
+        .features-grid-item
+          .features-grid-item__icon
+            = tabler_icon 'app_window'
+          %h4.features-grid-item__title Easy-to-Use Interface
+          %p.features-grid-item__body A clean, intuitive design that makes adding, editing, and completing tasks a breeze.
 
-      .feature
-        .feature__icon
-          = tabler_icon 'list_tree'
-        %h4.feature__title Customizable Task Lists
-        %p.feature__body Create custom task lists for every part of your life – from work projects to personal goals.
+        .features-grid-item
+          .features-grid-item__icon
+            = tabler_icon 'list_tree'
+          %h4.features-grid-item__title Customizable Task Lists
+          %p.features-grid-item__body Create custom task lists for every part of your life – from work projects to personal goals.
 
-      .feature
-        .feature__icon
-          = tabler_icon 'bell_ringing'
-        %h4.feature__title Smart Reminders and Notifications
-        %p.feature__body Never miss a deadline with smart reminders that notify you based on your preferences.
+        .features-grid-item
+          .features-grid-item__icon
+            = tabler_icon 'bell_ringing'
+          %h4.features-grid-item__title Smart Reminders and Notifications
+          %p.features-grid-item__body Never miss a deadline with smart reminders that notify you based on your preferences.
 
-      .feature
-        .feature__icon
-          = tabler_icon 'refresh'
-        %h4.feature__title Seamless Sync Across Devices
-        %p.feature__body Access your tasks anytime, anywhere with automatic sync across all your devices.
+        .features-grid-item
+          .features-grid-item__icon
+            = tabler_icon 'refresh'
+          %h4.features-grid-item__title Seamless Sync Across Devices
+          %p.features-grid-item__body Access your tasks anytime, anywhere with automatic sync across all your devices.
 
-      .feature
-        .feature__icon
-          = tabler_icon 'table_share'
-        %h4.feature__title Collaborative Features
-        %p.feature__body Share lists and collaborate with family, friends, or colleagues to get things done together.
+        .features-grid-item
+          .features-grid-item__icon
+            = tabler_icon 'table_share'
+          %h4.features-grid-item__title Collaborative Features
+          %p.features-grid-item__body Share lists and collaborate with family, friends, or colleagues to get things done together.
 
-      .feature
-        .feature__icon
-          = tabler_icon 'progress'
-        %h4.feature__title Progress Tracking
-        %p.feature__body Visualize your progress with our built-in tracking and analytics tools.
+        .features-grid-item
+          .features-grid-item__icon
+            = tabler_icon 'progress'
+          %h4.features-grid-item__title Progress Tracking
+          %p.features-grid-item__body Visualize your progress with our built-in tracking and analytics tools.
 
--# %section#benefits.bg-white
-  .container.mx-auto.py-16.px-12
-    .mb-16
-      %h2.mb-4.text-4xl.tracking-tight.font-extrabold.text-gray-900 Why Choose [App Name]?
-
-    %div
-      %div
-        %h4 Stay Focused and Organized
-        %p Prioritize your tasks, set deadlines, and stay on track with your daily goals.
+  -# %section#benefits
+    .landing-page__section
+      .mb-16
+        %h2.landing-page__section-title Why Choose [App Name]?
 
       %div
-        %h4 Boost Your Productivity
-        %p Achieve more in less time with efficient task management and easy-to-use tools.
+        %div
+          %h4 Stay Focused and Organized
+          %p Prioritize your tasks, set deadlines, and stay on track with your daily goals.
+
+        %div
+          %h4 Boost Your Productivity
+          %p Achieve more in less time with efficient task management and easy-to-use tools.
+
+        %div
+          %h4 Simplify Your Life
+          %p One app to manage all aspects of your life, from work to personal tasks.
+
+        %div
+          %h4 Get Started Instantly
+          %p No steep learning curve or complex setups – just sign up, and start organizing.
+
+  %section#testimonials
+    .landing-page__section
+      .mb-16
+        %h2.landing-page__section-title Real Feedback from Users
+
+      .mx-auto.text-center.pt-16.px-6
+        %figure.testimonial
+          .testimonial__icon
+            = tabler_icon 'quote'
+          %blockquote.testimonial__body
+            %p "[App Name] has transformed the way I manage my day. It's simple, effective, and keeps me on track like never before!"
+          %figcaption.testimonial__meta
+            .testimonial__author
+              .testimonial__name Sarah
+              .testimonial__occupation Freelancer
+
+        %figure.testimonial
+          .testimonial__icon
+            = tabler_icon 'quote'
+          %blockquote.testimonial__body
+            %p "I love the collaborative features – it's perfect for managing tasks with my team!"
+          %figcaption.testimonial__meta
+            .testimonial__author
+              .testimonial__name David
+              .testimonial__occupation Project Manager
+
+  -# %section#gallery
+    .landing-page__section
+      .mb-16
+        %h2.landing-page__section-title Screenshots or Demo Video
+        %h3 See [App Name] in Action
+
+    -# Include 2-3 screenshots of the app or a short demo video showing the main features and user interface.
+
+  -# %section#pricing.bg-white
+    .landing-page__section
+      .mb-16
+        %h2.landing-page__section-title Clear and Transparent Pricing
+        %h3 Flexible Plans for Every Need
+
+      %ul
+        %li Free Plan: "Basic task management features to get you started."
+        %li Pro Plan: "$5/month – Advanced features, smart reminders, collaboration tools, and more."
+        %li Enterprise Plan: "Contact us for custom solutions tailored to your business."
 
       %div
-        %h4 Simplify Your Life
-        %p One app to manage all aspects of your life, from work to personal tasks.
+        = link_to 'Choose Your Plan', '#'
 
-      %div
-        %h4 Get Started Instantly
-        %p No steep learning curve or complex setups – just sign up, and start organizing.
+  %section#faq
+    .landing-page__section
+      .mb-16
+        %h2.landing-page__section-title Address Common Questions
 
-%section#testimonials.bg-white
-  .container.mx-auto.py-16.px-12
-    .mb-16
-      %h2.mb-4.text-4xl.tracking-tight.font-extrabold.text-gray-900 Real Feedback from Users
+      .faqs-grid
+        .faqs-grid-item
+          %h3.faqs-grid-item__question
+            = tabler_icon 'help_hexagon'
+            Is [App Name] free to use?
+          %p.faqs-grid-item__answer Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, maxime blanditiis? Culpa enim praesentium dolorem, quam unde ex neque mollitia, quae earum, qui perferendis. Ea libero atque repellendus tempore ducimus.
+        .faqs-grid-item
+          %h3.faqs-grid-item__question
+            = tabler_icon 'help_hexagon'
+            How does the collaboration feature work?
+          %p.faqs-grid-item__answer Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem autem, harum inventore minima praesentium distinctio, dolorum recusandae necessitatibus quia sit iste quasi accusamus corrupti eius sapiente obcaecati cupiditate culpa eos?
+        .faqs-grid-item
+          %h3.faqs-grid-item__question
+            = tabler_icon 'help_hexagon'
+            Can I use [App Name] offline?
+          %p.faqs-grid-item__answer Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, consequatur velit eveniet quos doloremque a beatae nihil, cum atque ullam in error adipisci voluptas natus. Ipsam, itaque eum? Ea, cum.
+        .faqs-grid-item
+          %h3.faqs-grid-item__question
+            = tabler_icon 'help_hexagon'
+            Is my data secure?
+          %p.faqs-grid-item__answer Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit molestias non saepe exercitationem sed, libero, asperiores minus, nobis assumenda tempora totam beatae ullam laudantium officia molestiae aliquam et necessitatibus voluptas?
 
-    .mx-auto.text-center.pt-16.px-6
-      %figure.testimonial
-        .testimonial__icon
-          = tabler_icon 'quote'
-        %blockquote.testimonial__body
-          %p "[App Name] has transformed the way I manage my day. It's simple, effective, and keeps me on track like never before!"
-        %figcaption.testimonial__meta
-          .testimonial__author
-            .testimonial__name Sarah
-            .testimonial__occupation Freelancer
+  %footer
+    .landing-page__section
+      .flex.flex-col.items-center.space-y-8
+        %h2= link_to '[App Name]', root_path, class: ' text-2xl font-semibold text-gray-900'
 
-      %figure.testimonial
-        .testimonial__icon
-          = tabler_icon 'quote'
-        %blockquote.testimonial__body
-          %p "I love the collaborative features – it's perfect for managing tasks with my team!"
-        %figcaption.testimonial__meta
-          .testimonial__author
-            .testimonial__name David
-            .testimonial__occupation Project Manager
+        .text-lg.text-center.text-gray-500
+          Have questions? Reach out to us on social media or at
+          = link_to 'support@[appname].com', 'mailto:support@[appname].com', class: 'font-medium text-indigo-600 hover:underline'
 
--# %section#gallery.bg-white
-  .container.mx-auto.py-16.px-12
-    .mb-16
-      %h2.mb-4.text-4xl.tracking-tight.font-extrabold.text-gray-900 Screenshots or Demo Video
-      %h3 See [App Name] in Action
+        %ul.socials-list
+          %li
+            = link_to '#', class: 'socials-list-item' do
+              = tabler_icon 'brand_facebook'
+          %li
+            = link_to '#', class: 'socials-list-item' do
+              = tabler_icon 'brand_x'
+          %li
+            = link_to '#', class: 'socials-list-item' do
+              = tabler_icon 'brand_instagram'
+          %li
+            = link_to '#', class: 'socials-list-item' do
+              = tabler_icon 'brand_youtube'
+          %li
+            = link_to '#', class: 'socials-list-item' do
+              = tabler_icon 'brand_tiktok'
 
-  -# Include 2-3 screenshots of the app or a short demo video showing the main features and user interface.
-
--# %section#pricing.bg-white
-  .container.mx-auto.py-16.px-12
-    .mb-16
-      %h2.mb-4.text-4xl.tracking-tight.font-extrabold.text-gray-900 Clear and Transparent Pricing
-      %h3 Flexible Plans for Every Need
-
-    %ul
-      %li Free Plan: "Basic task management features to get you started."
-      %li Pro Plan: "$5/month – Advanced features, smart reminders, collaboration tools, and more."
-      %li Enterprise Plan: "Contact us for custom solutions tailored to your business."
-
-    %div
-      = link_to 'Choose Your Plan', '#'
-
-%section#faq.bg-white
-  .container.mx-auto.py-16.px-12
-    .mb-16
-      %h2.mb-4.text-4xl.tracking-tight.font-extrabold.text-gray-900 Address Common Questions
-
-    .grid.grid-cols-2.gap-16.pt-8.text-left.border-t.border-gray-200
-      .faq-item
-        %h3.faq-item__question
-          = tabler_icon 'help_hexagon'
-          Is [App Name] free to use?
-        %p.faq-item__answer Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, maxime blanditiis? Culpa enim praesentium dolorem, quam unde ex neque mollitia, quae earum, qui perferendis. Ea libero atque repellendus tempore ducimus.
-      .faq-item
-        %h3.faq-item__question
-          = tabler_icon 'help_hexagon'
-          How does the collaboration feature work?
-        %p.faq-item__answer Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem autem, harum inventore minima praesentium distinctio, dolorum recusandae necessitatibus quia sit iste quasi accusamus corrupti eius sapiente obcaecati cupiditate culpa eos?
-      .faq-item
-        %h3.faq-item__question
-          = tabler_icon 'help_hexagon'
-          Can I use [App Name] offline?
-        %p.faq-item__answer Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, consequatur velit eveniet quos doloremque a beatae nihil, cum atque ullam in error adipisci voluptas natus. Ipsam, itaque eum? Ea, cum.
-      .faq-item
-        %h3.faq-item__question
-          = tabler_icon 'help_hexagon'
-          Is my data secure?
-        %p.faq-item__answer Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit molestias non saepe exercitationem sed, libero, asperiores minus, nobis assumenda tempora totam beatae ullam laudantium officia molestiae aliquam et necessitatibus voluptas?
-
-%footer.bg-white
-  .container.mx-auto.py-16.px-12
-    .flex.flex-col.items-center.space-y-8
-      %h2= link_to '[App Name]', root_path, class: ' text-2xl font-semibold text-gray-900'
-
-      .text-lg.text-center.text-gray-500
-        Have questions? Reach out to us on social media or at
-        = link_to 'support@[appname].com', 'mailto:support@[appname].com', class: 'font-medium text-indigo-600 hover:underline'
-
-      %ul.flex.flex-row.justify-center.gap-8
-        %li
-          = link_to '#', class: 'social-item' do
-            = tabler_icon 'brand_facebook'
-        %li
-          = link_to '#', class: 'social-item' do
-            = tabler_icon 'brand_x'
-        %li
-          = link_to '#', class: 'social-item' do
-            = tabler_icon 'brand_instagram'
-        %li
-          = link_to '#', class: 'social-item' do
-            = tabler_icon 'brand_youtube'
-        %li
-          = link_to '#', class: 'social-item' do
-            = tabler_icon 'brand_tiktok'
-
-      %ul.flex.flex-row.justify-center.gap-4
-        %li
-          = link_to 'Privacy Policy', '#', class: 'text-sm text-gray-500 hover:text-indigo-500 hover:underline'
-        %li
-          = link_to 'Terms of Service', '#', class: 'text-sm text-gray-500 hover:text-indigo-500 hover:underline'
+        %ul.flex.flex-row.justify-center.gap-4
+          %li
+            = link_to 'Privacy Policy', '#', class: 'text-sm text-gray-500 hover:text-indigo-500 hover:underline'
+          %li
+            = link_to 'Terms of Service', '#', class: 'text-sm text-gray-500 hover:text-indigo-500 hover:underline'

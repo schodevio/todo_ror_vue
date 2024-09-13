@@ -1,0 +1,22 @@
+@layer components {
+  .stats-grid-item {
+    @apply
+      flex
+      flex-col
+      justify-center
+      items-center;
+
+    &__value {
+      @apply
+        mb-2
+        text-4xl
+        font-extrabold;
+    }
+
+    &__text {
+      @apply
+        font-light
+        text-gray-500;
+    }
+  }
+}

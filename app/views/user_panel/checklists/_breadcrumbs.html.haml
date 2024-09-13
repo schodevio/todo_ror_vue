@@ -1,18 +1,15 @@
-%nav.breadcrumb.mb-3{ 'aria-label': 'breadcrumb' }
+%nav.mb-3{ 'aria-label': 'breadcrumb' }
   %ol.breadcrumbs-list
-    %li.breadcrumb-item
-      = link_to user_panel_dashboard_path, class: 'breadcrumb-item__link' do
-        .breadcrumb-item__content
-          = tabler_icon 'home'
-          %span Home
-    %li.breadcrumb-item
-      = link_to user_panel_checklists_path, class: 'breadcrumb-item__link' do
-        .breadcrumb-item__content
-          = tabler_icon 'chevron_right'
-          %span Checklists
+    %li.breadcrumbs-list-item
+      = link_to user_panel_dashboard_path, class: 'breadcrumbs-list-item__link' do
+        = tabler_icon 'home'
+        %span Home
+    %li.breadcrumbs-list-item
+      = link_to user_panel_checklists_path, class: 'breadcrumbs-list-item__link' do
+        = tabler_icon 'chevron_right'
+        %span Checklists
     - if @checklist
-      %li.breadcrumb-item
-        = link_to user_panel_checklist_path(@checklist), class: 'breadcrumb-item__link' do
-          .breadcrumb-item__content
-            = tabler_icon 'chevron_right'
-            %span= @checklist.name
+      %li.breadcrumbs-list-item
+        = link_to user_panel_checklist_path(@checklist), class: 'breadcrumbs-list-item__link' do
+          = tabler_icon 'chevron_right'
+          %span= @checklist.name
