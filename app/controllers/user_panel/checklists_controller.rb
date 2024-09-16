@@ -34,6 +34,22 @@ module UserPanel
       head :no_content
     end
 
+    def export
+      presenter = ::Checklists::ExportPresenter.new(checklist, user: current_user)
+
+      respond_to do |format|
+        format.pdf do
+          send_data(presenter.as_pdf, filename: presenter.filename, disposition: 'inline')
+        end
+      end
+    end
+
+    def send_email
+      send_email_form.call
+
+      respond_with send_email_form, location: nil, status: :no_content
+    end
+
     private
 
     def checklist
@@ -42,6 +58,14 @@ module UserPanel
 
     def checklist_params
       params.require(:checklist).permit(:name, :thumbnail)
+    end
+
+    def send_email_form
+      @send_email_form ||= Checklists::SendEmailForm.new(checklist, params: send_email_params)
+    end
+
+    def send_email_params
+      params.require(:checklist).permit(:receiver_email).merge(user: current_user)
     end
   end
 end

@@ -6,6 +6,8 @@ export class ChecklistModel {
 
   links: {
     checklist_path: string
+    export_checklist_pdf_path: string
+    send_email_checklist_path: string
     thumbnail_url: string
   }
 
@@ -17,6 +19,12 @@ export class ChecklistModel {
     return {
       name: this.name,
       thumbnail: this.thumbnail
+    }
+  }
+
+  get sendEmailParams() {
+    return {
+      receiver_email: ''
     }
   }
 }

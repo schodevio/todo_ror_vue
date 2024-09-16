@@ -66,6 +66,18 @@ export default (initialData: Partial<ChecklistModel> = {}) => {
     })
   }
 
+  const sendEmailChecklist = (params: ChecklistModel['sendEmailParams']) => {
+    startLoading()
+    clearErrors()
+
+    return new Promise(resolve => {
+      useHTTP(state.checklist.links.send_email_checklist_path, { method: 'POST', data: { checklist: params } })
+        .then(resolve)
+        .catch(error => setErrors(error.response.data.errors))
+        .finally(stopLoading)
+    })
+  }
+
   return {
     ...toRefs(state),
     loading,
@@ -74,6 +86,7 @@ export default (initialData: Partial<ChecklistModel> = {}) => {
     setChecklist,
     createChecklist,
     updateChecklist,
-    deleteChecklist
+    deleteChecklist,
+    sendEmailChecklist
   }
 }

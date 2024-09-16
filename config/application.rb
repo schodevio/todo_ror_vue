@@ -30,6 +30,10 @@ module TodoRorVue
     config.generators.system_tests = nil
 
     # Eager load paths
+    config.eager_load_paths << Rails.root.join('app', 'concerns')
+    config.eager_load_paths << Rails.root.join('app', 'forms')
+    config.eager_load_paths << Rails.root.join('app', 'presenters')
+    config.eager_load_paths << Rails.root.join('app', 'services')
     config.eager_load_paths << Rails.root.join('app', 'validators')
 
     # Generators

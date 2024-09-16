@@ -332,4 +332,139 @@ RSpec.describe UserPanel::ChecklistsController, type: :controller do
       end
     end
   end
+
+  describe '#export' do
+    context 'when user not logged in' do
+      it 'redirects to login view' do
+        get :export, params: { id: 1 }
+        expect(response).to redirect_to new_user_session_path
+      end
+
+      it 'responds with unauthorized' do
+        get :export, params: { id: 1 }, as: :pdf
+        expect(response).to have_http_status(:unauthorized)
+      end
+    end
+
+    context 'when user logged in' do
+      context 'when checklist exists' do
+        it 'updates checklist' do
+          user = create(:user)
+          checklist = create(:checklist, user: user, name: 'Sample Name')
+
+          sign_in user
+          get :export, params: { id: checklist.id }, as: :pdf
+
+          expect(response).to have_http_status(:ok)
+          expect(response.body).to start_with('%PDF-1.4')
+          expect(response.content_type).to eq('application/pdf')
+        end
+      end
+
+      context 'when checklist is missing' do
+        it 'raises RecordNotFound error' do
+          user = create(:user)
+
+          sign_in user
+          action = -> { get :export, params: { id: 1 } }
+
+          expect(&action).to raise_error(ActiveRecord::RecordNotFound)
+        end
+      end
+
+      context 'when checklist belongs to other user' do
+        it 'raises RecordNotFound error' do
+          user = create(:user)
+          checklist = create(:checklist, :with_user)
+
+          sign_in user
+          action = -> { get :export, params: { id: checklist.id } }
+
+          expect(&action).to raise_error(ActiveRecord::RecordNotFound)
+        end
+      end
+    end
+  end
+
+  describe '#send_email' do
+    context 'when user not logged in' do
+      it 'redirects to login view' do
+        post :send_email, params: { id: 1 }
+        expect(response).to redirect_to new_user_session_path
+      end
+
+      it 'responds with unauthorized' do
+        post :send_email, params: { id: 1 }, as: :json
+        expect(response).to have_http_status(:unauthorized)
+      end
+    end
+
+    context 'when user logged in' do
+      context 'when valid params' do
+        it 'enqueues UserPanel::ChecklistMailer#checklist_export' do
+          user = create(:user)
+          checklist = create(:checklist, user: user)
+
+          params = {
+            id: checklist.id,
+            checklist: {
+              receiver_email: 'john@example.com'
+            }
+          }
+
+          sign_in user
+          action = -> { post :send_email, params: params, as: :json }
+
+          expect(&action).to have_enqueued_mail(UserPanel::ChecklistMailer, :checklist_export)
+          expect(response).to have_http_status(:no_content)
+        end
+      end
+
+      context 'when invalid params' do
+        it 'responds with errors' do
+          user = create(:user)
+          checklist = create(:checklist, user: user)
+
+          params = {
+            id: checklist.id,
+            checklist: {
+              receiver_email: ''
+            }
+          }
+
+          sign_in user
+          action = -> { post :send_email, params: params, as: :json }
+
+          expect(&action).to not_have_enqueued_mail(UserPanel::ChecklistMailer, :checklist_export)
+          expect(response).to have_http_status(:unprocessable_entity)
+
+          expect(response.parsed_body['errors']['receiver_email'])
+            .to contain_exactly("can't be blank")
+        end
+      end
+
+      context 'when checklist is missing' do
+        it 'raises RecordNotFound error' do
+          user = create(:user)
+
+          sign_in user
+          action = -> { post :send_email, params: { id: 1 } }
+
+          expect(&action).to raise_error(ActiveRecord::RecordNotFound)
+        end
+      end
+
+      context 'when checklist belongs to other user' do
+        it 'raises RecordNotFound error' do
+          user = create(:user)
+          checklist = create(:checklist, :with_user)
+
+          sign_in user
+          action = -> { post :send_email, params: { id: checklist.id } }
+
+          expect(&action).to raise_error(ActiveRecord::RecordNotFound)
+        end
+      end
+    end
+  end
 end

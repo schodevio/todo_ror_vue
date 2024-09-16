@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   namespace :user_panel, path: :users do
     resources :checklists, only: %i[index show create update destroy] do
       resources :tasks, module: :checklists, only: %i[index create update destroy]
+
+      member do
+        get :export
+        post :send_email
+      end
     end
 
     resource :dashboard, controller: :dashboard, only: :show

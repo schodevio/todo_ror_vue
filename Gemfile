@@ -18,6 +18,8 @@ gem 'sprockets-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 gem 'ulid-rails'
 gem 'vite_rails'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 # gem 'bcrypt', '~> 3.1.7'
 # gem 'kredis'

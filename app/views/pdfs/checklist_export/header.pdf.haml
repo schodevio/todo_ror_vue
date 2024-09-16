@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }/
+    %meta{ charset: 'utf-8' }/
+
+    = stylesheet_link_tag wicked_pdf_asset_base64 'pdf'
+  %body
+    %header.text-muted
+      %table
+        %tbody
+          %tr
+            %td [App Name]
+            %td.text-right= root_url
