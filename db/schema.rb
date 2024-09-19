@@ -68,6 +68,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_10_111842) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "otp_secret_key", null: false
+    t.boolean "otp_required_for_login", default: false, null: false
+    t.text "otp_backup_codes", default: "", null: false
+    t.integer "last_otp_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "first_name", null: false

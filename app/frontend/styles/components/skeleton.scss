@@ -1,0 +1,48 @@
+@layer components {
+  .skeleton {
+    @apply
+      animate-pulse;
+
+    & [class^=skeleton__] {
+      @apply
+        bg-gray-200
+        rounded-full;
+    }
+
+    &__badge-lg {
+      @apply
+        h-[1.5rem];
+    }
+
+    &__button {
+      @apply
+        h-[2.625rem];
+    }
+
+    &__input {
+      @apply
+        h-[2.625rem];
+    }
+
+    &__label {
+      @apply
+        h-[0.75rem]
+        mb-2;
+    }
+
+    &__link-sm {
+      @apply
+        h-[0.75em];
+    }
+
+    &__text-sm {
+      @apply
+        h-[1rem];
+    }
+
+    &__text-md {
+      @apply
+        h-[1rem];
+    }
+  }
+}

@@ -69,6 +69,18 @@ export default (initialData: Partial<UserModel> = {}) => {
     })
   }
 
+  const updateUser = (path: string, params: UserModel['updateParams']) => {
+    startLoading()
+    clearErrors()
+
+    return new Promise(resolve => {
+      useHTTP(path, { method: 'PUT', data: { user: params }})
+        .then(resolve)
+        .catch(error => setErrors(error.response.data.errors))
+        .finally(stopLoading)
+    })
+  }
+
   return {
     ...toRefs(state),
     loading,
@@ -78,6 +90,7 @@ export default (initialData: Partial<UserModel> = {}) => {
     forgotPassword,
     resetPassword,
     signIn,
-    signUp
+    signUp,
+    updateUser
   }
 }

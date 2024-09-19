@@ -1,0 +1,37 @@
+@layer components {
+  .badge {
+    @apply
+      bg-gray-100
+      text-gray-800
+      text-xs
+      font-medium
+      inline-block
+      me-2
+      px-2.5
+      py-0.5
+      rounded;
+
+    &--lg {
+      @apply
+        text-sm;
+    }
+
+    &--primary {
+      @apply
+        bg-indigo-100
+        text-indigo-800;
+    }
+
+    &--success {
+      @apply
+        bg-green-100
+        text-green-800;
+    }
+
+    &--danger {
+      @apply
+        bg-red-100
+        text-red-800;
+    }
+  }
+}

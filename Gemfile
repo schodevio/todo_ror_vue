@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 ruby '3.2.2'
 
+gem 'active_model_otp'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'haml-rails'
@@ -13,6 +14,7 @@ gem 'pg', '~> 1.1'
 gem 'positioning'
 gem 'puma', '>= 5.0'
 gem 'rails', '~> 7.1.3', '>= 7.1.3.4'
+gem 'rqrcode'
 gem 'seedbank'
 gem 'sprockets-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
@@ -40,6 +42,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'web-console'
 
   # gem 'rack-mini-profiler'

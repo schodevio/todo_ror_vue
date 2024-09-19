@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     end
 
     resource :dashboard, controller: :dashboard, only: :show
+    resource :otp_auth, controller: :otp_auth, only: %i[show create update destroy]
   end
 
   get 'up' => 'rails/health#show', as: :rails_health_check

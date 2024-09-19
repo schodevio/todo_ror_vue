@@ -38,6 +38,13 @@ export class UserModel {
       password_confirmation: ''
     }
   }
+
+  get updateParams() {
+    return {
+      ...this.registerParams,
+      current_password: ''
+    }
+  }
 }
 
 export class UsersList {

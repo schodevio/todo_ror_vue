@@ -41,33 +41,32 @@
       </button>
     </div>
 
-    <p class="text-center text-sm font-light text-gray-500">
-      Nevermind,
-      <a
-        href="/users/sign_in"
-        class="font-medium text-indigo-600 hover:underline"
-      >
-        Sign In
-      </a>
-    </p>
+    <div class="mb-3">
+      <p class="text-center text-sm font-light text-gray-500">
+        Nevermind,
+        <a
+          href="/users/sign_in"
+          class="font-medium text-indigo-600 hover:underline"
+        >
+          Sign In
+        </a>
+      </p>
+    </div>
   </form>
 </template>
 
 <script lang="ts" setup>
+//- Libs
 import { PropType, reactive } from 'vue'
 import { useUrlSearchParams } from '@vueuse/core'
-
+//- Models
 import type { TFormLinks } from '@components/users/types'
 import { UserModel } from '@components/users/models/user'
-
+//- Composables
 import useUserAuth from '@components/users/composables/useUserAuth'
-
+//- Components
 import InputField from '@components/shared/fields/InputField.vue'
 import InputText from 'primevue/inputtext'
-
-defineOptions({
-  name: 'UserResetPasswordForm'
-})
 
 const props = defineProps({
   links: {
@@ -77,7 +76,7 @@ const props = defineProps({
 })
 
 const { user, errors, resetPassword } = useUserAuth()
-const { reset_password_token } = useUrlSearchParams('history')
+const { reset_password_token } = useUrlSearchParams<{ reset_password_token: string }>('history')
 
 const formData = reactive<UserModel['resetPasswordParams']>({
   ...user.value.resetPasswordParams,

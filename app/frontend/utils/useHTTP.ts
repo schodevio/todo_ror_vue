@@ -32,7 +32,7 @@ export default (path: string, config?: AxiosRequestConfig & { multipart?: boolea
     error => {
       switch (error.response.status) {
         case 401:
-          if (!error.config.url.endsWith('sign_in')) window.location.href = '/'
+          if (!error.config.url.endsWith('sign_in')) window.location.pathname = '/'
         case 422:
           break
         default:

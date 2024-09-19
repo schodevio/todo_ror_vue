@@ -35,13 +35,19 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.1]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
+      ## OTP Authentication
+      t.string :otp_secret_key, null: false
+      t.boolean :otp_required_for_login, null: false, default: false
+      t.text :otp_backup_codes, null: false, default: ''
+      t.integer :last_otp_at
+
       t.timestamps null: false
 
       t.string :first_name, null: false
       t.string :last_name, null: false
     end
 
-    add_index :users, :email,                unique: true
+    add_index :users, :email, unique: true
     add_index :users, :reset_password_token, unique: true
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true

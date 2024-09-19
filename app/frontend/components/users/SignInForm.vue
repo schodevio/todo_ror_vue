@@ -51,32 +51,31 @@
       </button>
     </div>
 
-    <p class="text-center text-sm font-light text-gray-500">
-      Don't have an account yet?
-      <a
-        href="/users/sign_up"
-        class="font-medium text-indigo-600 hover:underline"
-      >
-        Sign up
-      </a>
-    </p>
+    <div class="mb-3">
+      <p class="text-center text-sm font-light text-gray-500">
+        Don't have an account yet?
+        <a
+          href="/users/sign_up"
+          class="font-medium text-indigo-600 hover:underline"
+        >
+          Sign up
+        </a>
+      </p>
+    </div>
   </form>
 </template>
 
 <script lang="ts" setup>
+//- Libs
 import { PropType, reactive } from 'vue'
-
+//- Models
 import type { TFormLinks } from '@components/users/types'
 import { UserModel } from '@components/users/models/user'
-
+//- Composables
 import useUserAuth from '@components/users/composables/useUserAuth'
-
+//- Components
 import InputField from '@components/shared/fields/InputField.vue'
 import InputText from 'primevue/inputtext'
-
-defineOptions({
-  name: 'UserSignInForm'
-})
 
 const props = defineProps({
   links: {

@@ -21,7 +21,7 @@ RSpec.describe UserPanel::Checklists::SendEmailForm do
     end
 
     context 'when receiver_email is blank' do
-      it 'returns false and produce errors' do
+      it 'returns false and produces errors' do
         checklist = create(:checklist, :with_user)
 
         params = {
@@ -37,7 +37,7 @@ RSpec.describe UserPanel::Checklists::SendEmailForm do
     end
 
     context 'when receiver_email has wrong format' do
-      it 'returns false and produce errors' do
+      it 'returns false and produces errors' do
         checklist = create(:checklist, :with_user)
 
         params = {
