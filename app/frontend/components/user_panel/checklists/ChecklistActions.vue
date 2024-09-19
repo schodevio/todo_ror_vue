@@ -89,11 +89,13 @@
       modal
     >
       <div class="dialog__row">
-        <IconAlertHexagon width="36" class="text-red-600" />
+        <IconAlertHexagon
+          class="text-red-600"
+          width="36"
+        />
 
         <p>
-          Are you sure you want to delete the <strong>{{ checklist.name }}</strong> checklist?
-          <br />
+          Are you sure you want to delete the <strong>{{ checklist.name }}</strong> checklist? <br>
           This action is irreversible.
         </p>
       </div>

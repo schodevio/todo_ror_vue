@@ -35,7 +35,7 @@
         v-if="fileUrl || checklist.links?.thumbnail_url"
         :src="fileUrl || checklist.links?.thumbnail_url"
         class="w-full max-w-80 rounded-lg mx-auto my-4"
-      />
+      >
     </InputField>
 
     <div class="dialog__actions">

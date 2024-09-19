@@ -17,6 +17,7 @@
 import { PropType } from 'vue'
 //- Models
 import { TaskModel } from '@components/user_panel/tasks/models/task'
+import type { TPositionChangeEvent } from '@components/user_panel/tasks/types'
 //- Composables
 import useTask from '@components/user_panel/tasks/composables/useTask'
 //- Components
@@ -33,8 +34,8 @@ defineProps({
 //- Update task position
 const { setTask, updateTask } = useTask()
 
-const handlePositionChange = (event: any) => {
-  setTask(event.moved.element as TaskModel)
+const handlePositionChange = (event: TPositionChangeEvent<TaskModel>) => {
+  setTask(event.moved.element)
 
   updateTask({ position: event.moved.newIndex + 1 })
     .then(() => window.dispatchEvent(new CustomEvent('refresh:tasks:collection')))

@@ -1,6 +1,9 @@
 <template>
   <form @submit.prevent="handleSubmit">
-    <OtpAuthStatusBadge :value="otpAuth.otp_required_for_login" class="mb-4" />
+    <OtpAuthStatusBadge
+      :value="otpAuth.otp_required_for_login"
+      class="mb-4"
+    />
 
     <div class="grid grid-cols-2 gap-2">
       <div class="col-span-2">

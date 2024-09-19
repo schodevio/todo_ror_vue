@@ -1,13 +1,19 @@
 <template>
   <div class="task-view">
-    <div v-if="editMode" class="task-view__form">
+    <div
+      v-if="editMode"
+      class="task-view__form"
+    >
       <EditTaskForm
         @close:form="editMode = false"
         :task
       />
     </div>
 
-    <div v-else class="task-view__wrapper">
+    <div
+      v-else
+      class="task-view__wrapper"
+    >
       <div class="task-view__header">
         <div class="task-view__title">
           <span>{{ props.task.name }}</span>
@@ -48,7 +54,10 @@
       modal
     >
       <div class="dialog__row">
-        <IconAlertHexagon width="36" class="text-red-600" />
+        <IconAlertHexagon
+          class="text-red-600"
+          width="36"
+        />
 
         <p>Are you sure you want to delete the <strong>{{ props.task.name }}</strong> task?</p>
       </div>

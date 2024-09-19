@@ -74,7 +74,7 @@
       </div>
 
       <div class="col-span-2">
-        <hr class="text-gray-500 my-8" />
+        <hr class="text-gray-500 my-8">
       </div>
 
       <div class="col-span-1">
