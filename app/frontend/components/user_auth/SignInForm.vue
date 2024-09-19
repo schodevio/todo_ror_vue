@@ -7,7 +7,7 @@
       class="mb-3"
     >
       <InputText
-        v-model="formData.email"
+        v-model="userAuth.email"
         :invalid="!!errors.email"
         name="user[email]"
         id="user_email"
@@ -23,7 +23,7 @@
       class="mb-3"
     >
       <InputText
-        v-model="formData.password"
+        v-model="userAuth.password"
         :invalid="!!errors.password"
         name="user[password]"
         id="user_password"
@@ -34,7 +34,7 @@
 
     <div class="flex justify-end items-center mb-3">
       <a
-        href="/users/password/new"
+        :href="props.links.forgot_password_path"
         class="text-sm font-medium text-indigo-600 hover:underline"
       >
         Forgot password?
@@ -55,7 +55,7 @@
       <p class="text-center text-sm font-light text-gray-500">
         Don't have an account yet?
         <a
-          href="/users/sign_up"
+          :href="props.links.sign_up_path"
           class="font-medium text-indigo-600 hover:underline"
         >
           Sign up
@@ -67,31 +67,26 @@
 
 <script lang="ts" setup>
 //- Libs
-import { PropType, reactive } from 'vue'
+import { PropType } from 'vue'
 //- Models
-import type { TFormLinks } from '@components/users/types'
-import { UserModel } from '@components/users/models/user'
+import type { TSignInFormLinks } from '@components/user_auth/types'
 //- Composables
-import useUserAuth from '@components/users/composables/useUserAuth'
+import useUserAuth from '@components/user_auth/composables/useUserAuth'
 //- Components
 import InputField from '@components/shared/fields/InputField.vue'
 import InputText from 'primevue/inputtext'
 
 const props = defineProps({
   links: {
-    type: Object as PropType<TFormLinks>,
+    type: Object as PropType<TSignInFormLinks>,
     required: true
   }
 })
 
-const { user, errors, signIn } = useUserAuth()
-
-const formData = reactive<UserModel['loginParams']>({
-  ...user.value.loginParams
-})
+const { userAuth, errors, signIn } = useUserAuth()
 
 const handleSubmit = () => {
-  signIn(props.links.submit_path, formData)
+  signIn(props.links.submit_path, userAuth.value.signInParams)
     .then(() => window.location.pathname = props.links.redirect_path)
 }
 </script>

@@ -35,8 +35,7 @@ module UserPanel
     private
 
     def enable_form
-      @enable_form ||=
-        OTPAuth::EnableForm.new(current_user, params: enable_params)
+      @enable_form ||= OTPAuth::EnableForm.new(current_user, params: enable_params)
     end
 
     def enable_params
@@ -44,8 +43,7 @@ module UserPanel
     end
 
     def verify_form
-      @verify_form ||=
-        OTPAuth::VerifyForm.new(current_user, params: verify_params)
+      @verify_form ||= OTPAuth::VerifyForm.new(current_user, params: verify_params)
     end
 
     def verify_params
@@ -53,8 +51,7 @@ module UserPanel
     end
 
     def disable_form
-      @disable_form ||=
-        OTPAuth::DisableForm.new(current_user, params: disable_params)
+      @disable_form ||= OTPAuth::DisableForm.new(current_user, params: disable_params)
     end
 
     def disable_params

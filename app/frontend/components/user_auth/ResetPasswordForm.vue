@@ -7,7 +7,7 @@
       class="mb-3"
     >
       <InputText
-        v-model="formData.password"
+        v-model="userAuth.password"
         :invalid="!!errors.password"
         name="user[password]"
         id="user_password"
@@ -23,7 +23,7 @@
       class="mb-3"
     >
       <InputText
-        v-model="formData.password_confirmation"
+        v-model="userAuth.password_confirmation"
         :invalid="!!errors.password_confirmation"
         name="user[password_confirmation]"
         id="user_password_confirmation"
@@ -45,10 +45,10 @@
       <p class="text-center text-sm font-light text-gray-500">
         Nevermind,
         <a
-          href="/users/sign_in"
+          :href="props.links.sign_in_path"
           class="font-medium text-indigo-600 hover:underline"
         >
-          Sign In
+          Sign in
         </a>
       </p>
     </div>
@@ -57,34 +57,28 @@
 
 <script lang="ts" setup>
 //- Libs
-import { PropType, reactive } from 'vue'
+import { PropType } from 'vue'
 import { useUrlSearchParams } from '@vueuse/core'
 //- Models
-import type { TFormLinks } from '@components/users/types'
-import { UserModel } from '@components/users/models/user'
+import type { TResetPasswordFormLinks } from '@components/user_auth/types'
 //- Composables
-import useUserAuth from '@components/users/composables/useUserAuth'
+import useUserAuth from '@components/user_auth/composables/useUserAuth'
 //- Components
 import InputField from '@components/shared/fields/InputField.vue'
 import InputText from 'primevue/inputtext'
 
 const props = defineProps({
   links: {
-    type: Object as PropType<TFormLinks>,
+    type: Object as PropType<TResetPasswordFormLinks>,
     required: true
   }
 })
 
-const { user, errors, resetPassword } = useUserAuth()
 const { reset_password_token } = useUrlSearchParams<{ reset_password_token: string }>('history')
-
-const formData = reactive<UserModel['resetPasswordParams']>({
-  ...user.value.resetPasswordParams,
-  reset_password_token
-})
+const { userAuth, errors, resetPassword } = useUserAuth({ reset_password_token })
 
 const handleSubmit = () => {
-  resetPassword(props.links.submit_path, formData)
+  resetPassword(props.links.submit_path, userAuth.value.resetPasswordParams)
     .then(() => window.location.pathname = props.links.redirect_path)
 }
 </script>

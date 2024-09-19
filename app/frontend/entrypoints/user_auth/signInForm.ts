@@ -1,12 +1,12 @@
 import { createApp } from 'vue'
-import EditUserForm from '@components/users/EditUserForm.vue'
+import SignInForm from '@components/user_auth/SignInForm.vue'
 
 import PrimeVue from 'primevue/config'
 import MyTheme from '@utils/primeTheme'
 
 const app = createApp({
-  components: { EditUserForm }
+  components: { SignInForm }
 })
 
 app.use(PrimeVue, { theme: { preset: MyTheme } })
-app.mount('[data-behavior="edit-user-form"]')
+app.mount('[data-behavior="sign-in-form"]')

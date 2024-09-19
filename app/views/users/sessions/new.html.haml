@@ -5,8 +5,8 @@
     .p-6.space-y-6
       %h1.text-xl.font-bold.leading-tight.tracking-tight.text-gray-900 Sign in to your account
 
-      %div{ data: { behavior: 'user-sign-in-form' } }
-        %user-sign-in-form{ 'v-bind': render(partial: 'users/sessions/new_form') }
+      %div{ data: { behavior: 'sign-in-form' } }
+        %sign-in-form{ 'v-bind': render(partial: 'users/sessions/new_form') }
           = render partial: 'users/sessions/new_form_skeleton'
 
-      = vite_typescript_tag 'entrypoints/users/signInForm.ts'
+      = vite_typescript_tag 'entrypoints/user_auth/signInForm.ts'

@@ -7,7 +7,7 @@
       class="mb-3"
     >
       <InputText
-        v-model="formData.email"
+        v-model="userAuth.email"
         :invalid="!!errors.email"
         name="user[email]"
         id="user_email"
@@ -29,10 +29,10 @@
       <p class="text-center text-sm font-light text-gray-500">
         Nevermind,
         <a
-          href="/users/sign_in"
+          :href="props.links.sign_in_path"
           class="font-medium text-indigo-600 hover:underline"
         >
-          Sign In
+          Sign in
         </a>
       </p>
     </div>
@@ -41,31 +41,26 @@
 
 <script lang="ts" setup>
 //- Libs
-import { PropType, reactive } from 'vue'
+import { PropType } from 'vue'
 //- Models
-import type { TFormLinks } from '@components/users/types'
-import { UserModel } from '@components/users/models/user'
+import type { TForgotPasswordFormLinks } from '@components/user_auth/types'
 //- Composables
-import useUserAuth from '@components/users/composables/useUserAuth'
+import useUserAuth from '@components/user_auth/composables/useUserAuth'
 //- Components
 import InputField from '@components/shared/fields/InputField.vue'
 import InputText from 'primevue/inputtext'
 
 const props = defineProps({
   links: {
-    type: Object as PropType<TFormLinks>,
+    type: Object as PropType<TForgotPasswordFormLinks>,
     required: true
   }
 })
 
-const { user, errors, forgotPassword } = useUserAuth()
-
-const formData = reactive<UserModel['forgotPasswordParams']>({
-  ...user.value.forgotPasswordParams
-})
+const { userAuth, errors, forgotPassword } = useUserAuth()
 
 const handleSubmit = () => {
-  forgotPassword(props.links.submit_path, formData)
+  forgotPassword(props.links.submit_path, userAuth.value.forgotPasswordParams)
     .then(() => window.location.pathname = props.links.redirect_path)
 }
 </script>

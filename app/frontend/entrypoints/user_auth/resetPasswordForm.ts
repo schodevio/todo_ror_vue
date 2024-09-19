@@ -1,12 +1,12 @@
 import { createApp } from 'vue'
-import UserResetPasswordForm from '@components/users/ResetPasswordForm.vue'
+import ResetPasswordForm from '@components/user_auth/ResetPasswordForm.vue'
 
 import PrimeVue from 'primevue/config'
 import MyTheme from '@utils/primeTheme'
 
 const app = createApp({
-  components: { UserResetPasswordForm }
+  components: { ResetPasswordForm }
 })
 
 app.use(PrimeVue, { theme: { preset: MyTheme } })
-app.mount('[data-behavior="user-reset-password-form"]')
+app.mount('[data-behavior="reset-password-form"]')

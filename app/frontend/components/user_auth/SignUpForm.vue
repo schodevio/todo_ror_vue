@@ -7,7 +7,7 @@
       class="mb-3"
     >
       <InputText
-        v-model="formData.first_name"
+        v-model="userAuth.first_name"
         :invalid="!!errors.first_name"
         name="user[first_name]"
         id="user_first_name"
@@ -23,7 +23,7 @@
       class="mb-3"
     >
       <InputText
-        v-model="formData.last_name"
+        v-model="userAuth.last_name"
         :invalid="!!errors.last_name"
         name="user[last_name]"
         id="user_last_name"
@@ -39,7 +39,7 @@
       class="mb-3"
     >
       <InputText
-        v-model="formData.email"
+        v-model="userAuth.email"
         :invalid="!!errors.email"
         name="user[email]"
         id="user_email"
@@ -55,7 +55,7 @@
       class="mb-3"
     >
       <InputText
-        v-model="formData.password"
+        v-model="userAuth.password"
         :invalid="!!errors.password"
         name="user[password]"
         id="user_password"
@@ -71,7 +71,7 @@
       class="mb-3"
     >
       <InputText
-        v-model="formData.password_confirmation"
+        v-model="userAuth.password_confirmation"
         :invalid="!!errors.password_confirmation"
         name="user[password_confirmation]"
         id="user_password_confirmation"
@@ -93,7 +93,7 @@
       <p class="text-center text-sm font-light text-gray-500">
         Aleady have an account?
         <a
-          href="/users/sign_in"
+          :href="props.links.sign_in_path"
           class="font-medium text-indigo-600 hover:underline"
         >
           Sign in
@@ -105,31 +105,26 @@
 
 <script lang="ts" setup>
 //- Libs
-import { PropType, reactive } from 'vue'
+import { PropType } from 'vue'
 //- Models
-import type { TFormLinks } from '@components/users/types'
-import { UserModel } from '@components/users/models/user'
+import type { TSignUpFormLinks } from '@components/user_auth/types'
 //- Composables
-import useUserAuth from '@components/users/composables/useUserAuth'
+import useUserAuth from '@components/user_auth/composables/useUserAuth'
 //- Components
 import InputField from '@components/shared/fields/InputField.vue'
 import InputText from 'primevue/inputtext'
 
 const props = defineProps({
   links: {
-    type: Object as PropType<TFormLinks>,
+    type: Object as PropType<TSignUpFormLinks>,
     required: true
   }
 })
 
-const { user, errors, signUp } = useUserAuth()
-
-const formData = reactive<UserModel['registerParams']>({
-  ...user.value.registerParams
-})
+const { userAuth, errors, signUp } = useUserAuth()
 
 const handleSubmit = () => {
-  signUp(props.links.submit_path, formData)
+  signUp(props.links.submit_path, userAuth.value.signUpParams)
     .then(() => window.location.pathname = props.links.redirect_path)
 }
 </script>

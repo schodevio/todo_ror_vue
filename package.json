@@ -1,7 +1,9 @@
 {
   "name": "todo_ror_vue",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "ts:check": "tsc --noEmit"
+  },
   "dependencies": {
     "@primevue/themes": "^4.0.5",
     "@tabler/icons-vue": "^3.15.0",

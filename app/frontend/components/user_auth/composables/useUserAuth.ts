@@ -1,27 +1,27 @@
 //- Libs
 import { reactive, toRefs } from 'vue'
 //- Models
-import { UserModel } from '@components/users/models/user'
+import { UserAuthModel } from '@components/user_auth/models/userAuth'
 //- Composables
 import useErrors from '@components/shared/errors/composables/useErrors'
 import useLoading from '@components/shared/loading/composables/useLoading'
 //- Utils
 import useHTTP from '@utils/useHTTP'
 
-export default (initialData: Partial<UserModel> = {}) => {
+export default (initialData: Partial<UserAuthModel> = {}) => {
   const state = reactive({
-    user: new UserModel(initialData)
+    userAuth: new UserAuthModel(initialData)
   })
 
   const { loading, startLoading, stopLoading } = useLoading()
   const { errors, setErrors, clearErrors } = useErrors()
 
-  const setUser = (data: Partial<UserModel> = {}) => {
-    state.user = new UserModel(data)
+  const setUserAuth = (data: Partial<UserAuthModel> = {}) => {
+    state.userAuth = new UserAuthModel(data)
     clearErrors()
   }
 
-  const forgotPassword = (path: string, params: UserModel['forgotPasswordParams']) => {
+  const forgotPassword = (path: string, params: UserAuthModel['forgotPasswordParams']) => {
     startLoading()
     clearErrors()
 
@@ -33,7 +33,7 @@ export default (initialData: Partial<UserModel> = {}) => {
     })
   }
 
-  const resetPassword = (path: string, params: UserModel['resetPasswordParams']) => {
+  const resetPassword = (path: string, params: UserAuthModel['resetPasswordParams']) => {
     startLoading()
     clearErrors()
 
@@ -45,7 +45,7 @@ export default (initialData: Partial<UserModel> = {}) => {
     })
   }
 
-  const signIn = (path: string, params: UserModel['loginParams']) => {
+  const signIn = (path: string, params: UserAuthModel['signInParams']) => {
     startLoading()
     clearErrors()
 
@@ -57,7 +57,7 @@ export default (initialData: Partial<UserModel> = {}) => {
     })
   }
 
-  const signUp = (path: string, params: UserModel['registerParams']) => {
+  const signUp = (path: string, params: UserAuthModel['signUpParams']) => {
     startLoading()
     clearErrors()
 
@@ -69,7 +69,7 @@ export default (initialData: Partial<UserModel> = {}) => {
     })
   }
 
-  const updateUser = (path: string, params: UserModel['updateParams']) => {
+  const updateUser = (path: string, params: UserAuthModel['updateParams']) => {
     startLoading()
     clearErrors()
 
@@ -86,7 +86,7 @@ export default (initialData: Partial<UserModel> = {}) => {
     loading,
     errors,
 
-    setUser,
+    setUserAuth,
     forgotPassword,
     resetPassword,
     signIn,

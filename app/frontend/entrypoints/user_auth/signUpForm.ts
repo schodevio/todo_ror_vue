@@ -1,12 +1,12 @@
 import { createApp } from 'vue'
-import UserForgotPasswordForm from '@components/users/ForgotPasswordForm.vue'
+import SignUpForm from '@components/user_auth/SignUpForm.vue'
 
 import PrimeVue from 'primevue/config'
 import MyTheme from '@utils/primeTheme'
 
 const app = createApp({
-  components: { UserForgotPasswordForm }
+  components: { SignUpForm }
 })
 
 app.use(PrimeVue, { theme: { preset: MyTheme } })
-app.mount('[data-behavior="user-forgot-password-form"]')
+app.mount('[data-behavior="sign-up-form"]')

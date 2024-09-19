@@ -9,7 +9,7 @@
           class="mb-3"
         >
           <InputText
-            v-model="formData.first_name"
+            v-model="userAuth.first_name"
             :invalid="!!errors.first_name"
             name="user[first_name]"
             id="user_first_name"
@@ -27,7 +27,7 @@
           class="mb-3"
         >
           <InputText
-            v-model="formData.last_name"
+            v-model="userAuth.last_name"
             :invalid="!!errors.last_name"
             name="user[last_name]"
             id="user_last_name"
@@ -45,7 +45,7 @@
           class="mb-3"
         >
           <InputText
-            v-model="formData.email"
+            v-model="userAuth.email"
             :invalid="!!errors.email"
             name="user[email]"
             id="user_email"
@@ -59,11 +59,11 @@
         <InputField
           :errors="errors.current_password"
           label-for="user_current_password"
-          label="Password (we need your current password to confirm your changes)"
+          label="Password (we need your current password to confirm these changes)"
           class="mb-3"
         >
           <InputText
-            v-model="formData.current_password"
+            v-model="userAuth.current_password"
             :invalid="!!errors.current_password"
             name="user[current_password]"
             id="user_current_password"
@@ -85,7 +85,7 @@
           class="mb-3"
         >
           <InputText
-            v-model="formData.password"
+            v-model="userAuth.password"
             :invalid="!!errors.password"
             name="user[password]"
             id="user_password"
@@ -103,7 +103,7 @@
           class="mb-3"
         >
           <InputText
-            v-model="formData.password_confirmation"
+            v-model="userAuth.password_confirmation"
             :invalid="!!errors.password_confirmation"
             name="user[password_confirmation]"
             id="user_password_confirmation"
@@ -127,19 +127,19 @@
 
 <script lang="ts" setup>
 //- Libs
-import { PropType, reactive } from 'vue'
+import { PropType } from 'vue'
 //- Models
-import type { TFormLinks } from '@components/users/types'
-import { UserModel } from '@components/users/models/user'
+import type { TFormLinks } from '@components/user_auth/types'
+import { UserAuthModel } from '@components/user_auth/models/userAuth'
 //- Composables
-import useUserAuth from '@components/users/composables/useUserAuth'
+import useUserAuth from '@components/user_auth/composables/useUserAuth'
 //- Components
 import InputField from '@components/shared/fields/InputField.vue'
 import InputText from 'primevue/inputtext'
 
 const props = defineProps({
   user: {
-    type: Object as PropType<UserModel>,
+    type: Object as PropType<UserAuthModel>,
     required: true
   },
   links: {
@@ -148,14 +148,10 @@ const props = defineProps({
   }
 })
 
-const { user, errors, updateUser } = useUserAuth(props.user)
-
-const formData = reactive<UserModel['updateParams']>({
-  ...user.value.updateParams
-})
+const { userAuth, errors, updateUser } = useUserAuth(props.user)
 
 const handleSubmit = () => {
-  updateUser(props.links.submit_path, formData)
+  updateUser(props.links.submit_path, userAuth.value.updateParams)
     .then(() => window.location.pathname = props.links.redirect_path)
 }
 </script>
