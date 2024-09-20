@@ -42,4 +42,5 @@
 
 /node_modules
 /public/coverage
+/public/fcoverage
 /spec/examples.txt
