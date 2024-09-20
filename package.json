@@ -4,7 +4,7 @@
   "scripts": {
     "eslint": "eslint",
     "ts:check": "tsc --noEmit",
-    "test": "vitest"
+    "test": "vitest --coverage"
   },
   "dependencies": {
     "@primevue/themes": "^4.0.5",
