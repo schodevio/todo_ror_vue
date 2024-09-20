@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="input-field">
     <label
       v-if="label"
       :for="labelFor"
-      class="block mb-2 text-sm font-medium text-gray-900"
+      class="input-field__label"
     >
       {{ label }}
     </label>
@@ -12,7 +12,7 @@
 
     <div
       v-if="errors.length > 0"
-      class="block mt-1 text-sm text-red-600"
+      class="input-field__error"
     >
       {{ errors[0] }}
     </div>

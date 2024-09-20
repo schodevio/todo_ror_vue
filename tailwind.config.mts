@@ -1,5 +1,7 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from 'tailwindcss'
+import tailwindScrollbar from 'tailwind-scrollbar'
+
+export default {
   content: [
     './app/helpers/**/*.rb',
     './app/assets/stylesheets/**/*.css',
@@ -7,14 +9,9 @@ module.exports = {
     './app/frontend/**/*.{js,ts,vue,css,scss}',
   ],
   theme: {
-    extend: {
-      height: {
-        '10.5': '2.625rem',
-        '11.5': '2.875rem'
-      }
-    },
+    extend: {}
   },
   plugins: [
-    require('tailwind-scrollbar')
-  ],
-}
+    tailwindScrollbar
+  ]
+} satisfies Config

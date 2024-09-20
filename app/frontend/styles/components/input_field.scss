@@ -1,0 +1,20 @@
+@layer components {
+  .input-field {
+    &__label {
+      @apply
+        block
+        mb-2
+        text-sm
+        font-medium
+        text-gray-900;
+    }
+
+    &__error {
+      @apply
+        block
+        mt-1
+        text-sm
+        text-red-600;
+    }
+  }
+}

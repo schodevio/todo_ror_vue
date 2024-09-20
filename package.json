@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "eslint": "eslint",
-    "ts:check": "tsc --noEmit"
+    "ts:check": "tsc --noEmit",
+    "test": "vitest"
   },
   "dependencies": {
     "@primevue/themes": "^4.0.5",
@@ -21,15 +22,20 @@
     "vuedraggable": "^4.1.0"
   },
   "devDependencies": {
+    "@vitest/coverage-v8": "^2.1.1",
+    "@vitest/ui": "^2.1.1",
+    "@vue/test-utils": "^2.4.6",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.10.0",
     "eslint-plugin-vue": "^9.28.0",
     "globals": "^15.9.0",
+    "happy-dom": "^15.7.4",
     "postcss": "^8.4.41",
     "tailwind-scrollbar": "^3.1.0",
     "tailwindcss": "^3.4.10",
     "typescript-eslint": "^8.6.0",
     "vite": "^5.0.0",
-    "vite-plugin-ruby": "^5.0.0"
+    "vite-plugin-ruby": "^5.0.0",
+    "vitest": "^2.1.1"
   }
 }

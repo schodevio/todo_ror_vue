@@ -2,8 +2,8 @@ import { ref } from 'vue'
 
 import type { TErrors } from '@components/shared/errors/types'
 
-export default () => {
-  const errors = ref<TErrors>({})
+export default (initialData: TErrors = {}) => {
+  const errors = ref<TErrors>(initialData)
 
   const setErrors = (data: TErrors) => {
     errors.value = data
