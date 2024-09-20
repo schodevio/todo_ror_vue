@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 ruby '3.2.2'
 
+gem 'active_link_to'
 gem 'active_model_otp'
 gem 'bootsnap', require: false
 gem 'devise'

@@ -2,11 +2,11 @@
   .sidebar__container
     %ul.sidebar__nav
       %li
-        = link_to user_panel_dashboard_path, class: 'sidebar__nav-link active' do
+        = active_link_to user_panel_dashboard_path, class: 'sidebar__nav-link' do
           = tabler_icon 'home'
           %span Home
       %li
-        = link_to user_panel_checklists_path, class: 'sidebar__nav-link' do
+        = active_link_to user_panel_checklists_path, class: 'sidebar__nav-link' do
           = tabler_icon 'list_details'
           %span Checklists
     %ul.sidebar__nav
@@ -15,6 +15,6 @@
           = tabler_icon 'settings'
           %span Settings
       %li
-        = link_to edit_user_registration_path, class: 'sidebar__nav-link' do
+        = active_link_to edit_user_registration_path, class: 'sidebar__nav-link' do
           = tabler_icon 'user_hexagon'
           %span Profile
