@@ -20,7 +20,7 @@ module UserPanel
 
     # Action to verify OTP code after sign in
     def update
-      session[:otp_user_id] = current_user.id if verify_form.valid?
+      session[:otp_user_id] = current_user.id if verify_form.call
 
       respond_with verify_form
     end

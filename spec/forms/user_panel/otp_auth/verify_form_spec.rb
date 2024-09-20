@@ -46,4 +46,32 @@ RSpec.describe UserPanel::OTPAuth::VerifyForm do
       end
     end
   end
+
+  describe '#call' do
+    context 'when OTP code is valid' do
+      it 'does not send notification' do
+        freeze_time
+
+        user = create(:user)
+        params = { otp_code: user.otp_code }
+
+        action = -> { described_class.new(user, params: params).call }
+
+        expect(&action).to not_have_enqueued_mail(UserPanel::UserMailer, :failed_login_attempt)
+      end
+    end
+
+    context 'when OTP code is wrong' do
+      it 'sends notification to user' do
+        freeze_time
+
+        user = create(:user)
+        params = { otp_code: '123' }
+
+        action = -> { described_class.new(user, params: params).call }
+
+        expect(&action).to have_enqueued_mail(UserPanel::UserMailer, :failed_login_attempt)
+      end
+    end
+  end
 end

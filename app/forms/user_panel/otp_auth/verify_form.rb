@@ -16,6 +16,14 @@ module UserPanel
         super(params)
       end
 
+      def call
+        return true if valid?
+
+        UserPanel::UserMailer.with(user: user).failed_login_attempt.deliver_later
+
+        false
+      end
+
       private
 
       def otp_code_accuracy
