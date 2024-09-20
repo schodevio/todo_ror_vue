@@ -6,5 +6,6 @@ FactoryBot.define do
     password { SecureRandom.urlsafe_base64(64, true) }
     first_name { 'John' }
     last_name { 'Doe' }
+    confirmed_at { 1.minute.ago }
   end
 end

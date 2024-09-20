@@ -1,0 +1,20 @@
+.flex.flex-col.justify-center.items-center.px-6.py.8.min-h-screen
+  = link_to '[App Name]', '#', class: 'flex items-center mb-6 text-2xl font-semibold text-gray-900'
+
+  .w-96.bg-white.rounded-lg.shadow
+    .p-6.space-y-6
+      %h1.text-xl.font-bold.leading-tight.tracking-tight.text-gray-900 Welcome on board!
+
+      %p
+        Thank you for signing up! To complete your account setup, please check your email inbox for
+        a message containing confirmation instructions.
+      %p
+        If you don't see the email, be sure to check your spam or junk folder, just in case, or
+        click the button below to resend.
+
+      .my-8
+        = link_to 'Resend Confirmation Instructions', new_user_confirmation_path, class: 'btn btn--primary w-full'
+      .my-8
+        = link_to new_user_session_path, class: 'btn w-full' do
+          = tabler_icon 'login'
+          Log In

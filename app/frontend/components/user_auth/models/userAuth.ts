@@ -12,6 +12,12 @@ export class UserAuthModel {
     Object.assign(this, data)
   }
 
+  get forgotPasswordParams() {
+    return {
+      email: this.email
+    }
+  }
+
   get resetPasswordParams() {
     return {
       password: this.password,
@@ -20,7 +26,7 @@ export class UserAuthModel {
     }
   }
 
-  get forgotPasswordParams() {
+  get resendConfirmationParams() {
     return {
       email: this.email
     }

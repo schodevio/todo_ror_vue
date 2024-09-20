@@ -53,6 +53,18 @@
 
     <div class="mb-3">
       <p class="text-center text-sm font-light text-gray-500">
+        Didn't receive a confirmation e-mail?
+        <a
+          :href="props.links.resend_confirmation_path"
+          class="font-medium text-indigo-600 hover:underline"
+        >
+          Resend
+        </a>
+      </p>
+    </div>
+
+    <div class="mb-3">
+      <p class="text-center text-sm font-light text-gray-500">
         Don't have an account yet?
         <a
           :href="props.links.sign_up_path"

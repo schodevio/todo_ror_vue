@@ -45,6 +45,18 @@ export default (initialData: Partial<UserAuthModel> = {}) => {
     })
   }
 
+  const resendConfirmation = (path: string, params: UserAuthModel['resendConfirmationParams']) => {
+    startLoading()
+    clearErrors()
+
+    return new Promise(resolve => {
+      useHTTP(path, { method: 'POST', data: { user: params }})
+        .then(resolve)
+        .catch(error => setErrors(error.response.data.errors))
+        .finally(stopLoading)
+    })
+  }
+
   const signIn = (path: string, params: UserAuthModel['signInParams']) => {
     startLoading()
     clearErrors()
@@ -89,6 +101,7 @@ export default (initialData: Partial<UserAuthModel> = {}) => {
     setUserAuth,
     forgotPassword,
     resetPassword,
+    resendConfirmation,
     signIn,
     signUp,
     updateUser

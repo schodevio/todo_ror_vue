@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Preview all emails at http://localhost:3000/rails/mailers/user_panel/checklist_mailer
+# Preview all emails at http://localhost:3000/rails/mailers
 
 module UserPanel
   class ChecklistMailerPreview < ActionMailer::Preview

@@ -13,7 +13,15 @@ module UserPanel
     respond_to :html, only: %i[new edit]
     respond_to :json, only: %i[create update]
 
+    def thank_you
+      render template: 'users/registrations/thank_you'
+    end
+
     protected
+
+    def after_inactive_sign_up_path_for(*)
+      users_thank_you_path
+    end
 
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name])

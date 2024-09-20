@@ -1,10 +1,12 @@
-%h2 Resend confirmation instructions
-= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
-  = render "users/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
-  .actions
-    = f.submit "Resend confirmation instructions"
-= render "users/shared/links"
+.flex.flex-col.justify-center.items-center.px-6.py.8.min-h-screen
+  = link_to '[App Name]', '#', class: 'flex items-center mb-6 text-2xl font-semibold text-gray-900'
+
+  .w-96.bg-white.rounded-lg.shadow
+    .p-6.space-y-6
+      %h1.text-xl.font-bold.leading-tight.tracking-tight.text-gray-900 Resend confirmation
+
+      %div{ data: { behavior: 'resend-confirmation-form' } }
+        %resend-confirmation-form{ 'v-bind': render(partial: 'users/confirmations/new_form') }
+          = render partial: 'users/confirmations/new_form_skeleton'
+
+      = vite_typescript_tag 'entrypoints/user_auth/resendConfirmationForm.ts'

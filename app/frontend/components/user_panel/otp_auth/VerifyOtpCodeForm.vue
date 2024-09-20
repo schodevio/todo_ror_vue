@@ -36,7 +36,7 @@
       class="btn w-full"
     >
       <IconLogout width="20px" />
-      Log out
+      Log Out
     </button>
   </div>
 </template>

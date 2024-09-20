@@ -3,6 +3,36 @@
 require 'rails_helper'
 
 RSpec.describe UserPanel::RegistrationsController, type: :controller do
+  describe '#create' do
+    it 'responds with created status' do
+      request.env['devise.mapping'] = Devise.mappings[:user]
+
+      params = {
+        user: {
+          first_name: 'John',
+          last_name: 'Doe',
+          email: 'john@example.com',
+          password: 'Password123!',
+          password_confirmation: 'Password123!'
+        }
+      }
+
+      action = -> { post :create, params: params, as: :json }
+
+      expect(&action).to change(User, :count).by(1)
+      expect(response).to have_http_status(:created)
+    end
+  end
+
+  describe '#thank_you' do
+    it 'renders thank you view' do
+      request.env['devise.mapping'] = Devise.mappings[:user]
+
+      get :thank_you
+      expect(response).to have_http_status(:ok)
+    end
+  end
+
   describe '#edit' do
     context 'when user not logged in' do
       it 'redirects to login view' do

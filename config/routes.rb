@@ -2,10 +2,15 @@
 
 Rails.application.routes.draw do
   devise_for :users, controllers: {
+    confirmations: 'user_panel/confirmations',
     passwords: 'user_panel/passwords',
     registrations: 'user_panel/registrations',
     sessions: 'user_panel/sessions'
   }
+
+  devise_scope :user do
+    get 'users/thank_you', to: 'user_panel/registrations#thank_you'
+  end
 
   namespace :user_panel, path: :users do
     resources :checklists, only: %i[index show create update destroy] do
