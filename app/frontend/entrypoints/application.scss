@@ -3,6 +3,7 @@
 @import 'tailwindcss/utilities';
 
 @import '../styles/base/base';
+@import '../styles/base/text';
 
 @import '../styles/components/badge';
 @import '../styles/components/breadcrumbs_list_item';
@@ -32,5 +33,6 @@
 @import '../styles/components/tasks_manager';
 @import '../styles/components/testimonial';
 
+@import '../styles/layout/auth_page';
 @import '../styles/layout/landing_page';
 @import '../styles/layout/page';

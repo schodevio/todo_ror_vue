@@ -1,9 +1,9 @@
-.flex.flex-col.justify-center.items-center.px-6.py.8.min-h-screen
-  = link_to '[App Name]', '#', class: 'flex items-center mb-6 text-2xl font-semibold text-gray-900'
+.auth-page
+  = link_to '[App Name]', '#', class: 'auth-page__brand'
 
-  .w-96.bg-white.rounded-lg.shadow
+  .auth-page__card
     .p-6.space-y-6
-      %h1.text-xl.font-bold.leading-tight.tracking-tight.text-gray-900 Forgot password?
+      %h1.auth-page__title Forgot password?
 
       %div{ data: { behavior: 'forgot-password-form' } }
         %forgot-password-form{ 'v-bind': render(partial: 'users/passwords/new_form') }

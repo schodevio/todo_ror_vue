@@ -1,0 +1,38 @@
+@layer components {
+  .auth-page {
+    @apply
+      flex
+      flex-col
+      justify-center
+      items-center
+      min-h-screen
+      p-6;
+
+    &__brand {
+      @apply
+        flex
+        items-center
+        mb-6
+        text-2xl
+        font-semibold
+        text-gray-900;
+    }
+
+    &__card {
+      @apply
+        w-96
+        bg-white
+        rounded-lg
+        shadow;
+    }
+
+    &__title {
+      @apply
+        text-xl
+        font-bold
+        leading-tight
+        tracking-tight
+        text-gray-900;
+    }
+  }
+}

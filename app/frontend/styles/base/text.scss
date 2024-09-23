@@ -1,0 +1,10 @@
+@layer components {
+  .text {
+    &__link {
+      @apply
+        text-gray-500
+        hover:text-indigo-500
+        hover:underline;
+    }
+  }
+}
