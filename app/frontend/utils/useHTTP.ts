@@ -14,7 +14,7 @@ export default (path: string, config?: AxiosRequestConfig & { multipart?: boolea
         headers: new AxiosHeaders({
           'Accept': 'application/json',
           'Content-Type': contentType,
-          'X-CSRF-Token': csrfMeta.content
+          'X-CSRF-Token': csrfMeta?.content
         })
       }
 
@@ -33,7 +33,6 @@ export default (path: string, config?: AxiosRequestConfig & { multipart?: boolea
       switch (error.response.status) {
         case 401:
           if (!error.config.url.endsWith('sign_in')) window.location.pathname = '/'
-        case 422:
           break
         default:
           // Raven.captureException(error)

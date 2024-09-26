@@ -71,7 +71,7 @@ const { userAuth, errors, resendConfirmation } = useUserAuth()
 const isSubmitSuccess = ref<boolean>()
 
 const handleSubmit = () => {
-  resendConfirmation(props.links.submit_path, userAuth.value.resendConfirmationParams)
+  resendConfirmation(props.links.submit_path)
     .then(() => isSubmitSuccess.value = true)
 }
 </script>

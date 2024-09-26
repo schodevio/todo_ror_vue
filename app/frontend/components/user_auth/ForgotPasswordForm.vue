@@ -60,7 +60,7 @@ const props = defineProps({
 const { userAuth, errors, forgotPassword } = useUserAuth()
 
 const handleSubmit = () => {
-  forgotPassword(props.links.submit_path, userAuth.value.forgotPasswordParams)
+  forgotPassword(props.links.submit_path)
     .then(() => window.location.pathname = props.links.redirect_path)
 }
 </script>

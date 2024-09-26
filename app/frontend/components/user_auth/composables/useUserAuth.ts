@@ -21,73 +21,73 @@ export default (initialData: Partial<UserAuthModel> = {}) => {
     clearErrors()
   }
 
-  const forgotPassword = (path: string, params: UserAuthModel['forgotPasswordParams']) => {
+  const forgotPassword = (path: string) => {
     startLoading()
     clearErrors()
 
-    return new Promise(resolve => {
-      useHTTP(path, { method: 'POST', data: { user: params }})
-        .then(resolve)
+    return new Promise<void>(resolve => {
+      useHTTP(path, { method: 'POST', data: { user: state.userAuth.forgotPasswordParams }})
+        .then(() => resolve())
         .catch(error => setErrors(error.response.data.errors))
         .finally(stopLoading)
     })
   }
 
-  const resetPassword = (path: string, params: UserAuthModel['resetPasswordParams']) => {
+  const resetPassword = (path: string) => {
     startLoading()
     clearErrors()
 
-    return new Promise(resolve => {
-      useHTTP(path, { method: 'PUT', data: { user: params }})
-        .then(resolve)
+    return new Promise<void>(resolve => {
+      useHTTP(path, { method: 'PUT', data: { user: state.userAuth.resetPasswordParams }})
+        .then(() => resolve())
         .catch(error => setErrors(error.response.data.errors))
         .finally(stopLoading)
     })
   }
 
-  const resendConfirmation = (path: string, params: UserAuthModel['resendConfirmationParams']) => {
+  const resendConfirmation = (path: string) => {
     startLoading()
     clearErrors()
 
-    return new Promise(resolve => {
-      useHTTP(path, { method: 'POST', data: { user: params }})
-        .then(resolve)
+    return new Promise<void>(resolve => {
+      useHTTP(path, { method: 'POST', data: { user: state.userAuth.resendConfirmationParams }})
+        .then(() => resolve())
         .catch(error => setErrors(error.response.data.errors))
         .finally(stopLoading)
     })
   }
 
-  const signIn = (path: string, params: UserAuthModel['signInParams']) => {
+  const signIn = (path: string) => {
     startLoading()
     clearErrors()
 
-    return new Promise(resolve => {
-      useHTTP(path, { method: 'POST', data: { user: params }})
-        .then(resolve)
-        .catch(() => setErrors({ email: [''], password: ['invalid credentials'] }))
+    return new Promise<void>(resolve => {
+      useHTTP(path, { method: 'POST', data: { user: state.userAuth.signInParams }})
+        .then(() => resolve())
+        .catch(() => setErrors({ base: ['invalid credentials'] }))
         .finally(stopLoading)
     })
   }
 
-  const signUp = (path: string, params: UserAuthModel['signUpParams']) => {
+  const signUp = (path: string) => {
     startLoading()
     clearErrors()
 
-    return new Promise(resolve => {
-      useHTTP(path, { method: 'POST', data: { user: params }})
-        .then(resolve)
+    return new Promise<void>(resolve => {
+      useHTTP(path, { method: 'POST', data: { user: state.userAuth.signUpParams }})
+        .then(() => resolve())
         .catch(error => setErrors(error.response.data.errors))
         .finally(stopLoading)
     })
   }
 
-  const updateUser = (path: string, params: UserAuthModel['updateParams']) => {
+  const updateUser = (path: string) => {
     startLoading()
     clearErrors()
 
-    return new Promise(resolve => {
-      useHTTP(path, { method: 'PUT', data: { user: params }})
-        .then(resolve)
+    return new Promise<void>(resolve => {
+      useHTTP(path, { method: 'PUT', data: { user: state.userAuth.updateParams }})
+        .then(() => resolve())
         .catch(error => setErrors(error.response.data.errors))
         .finally(stopLoading)
     })

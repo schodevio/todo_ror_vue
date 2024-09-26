@@ -78,7 +78,7 @@ const { reset_password_token } = useUrlSearchParams<{ reset_password_token: stri
 const { userAuth, errors, resetPassword } = useUserAuth({ reset_password_token })
 
 const handleSubmit = () => {
-  resetPassword(props.links.submit_path, userAuth.value.resetPasswordParams)
+  resetPassword(props.links.submit_path)
     .then(() => window.location.pathname = props.links.redirect_path)
 }
 </script>

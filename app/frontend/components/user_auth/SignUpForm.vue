@@ -124,7 +124,7 @@ const props = defineProps({
 const { userAuth, errors, signUp } = useUserAuth()
 
 const handleSubmit = () => {
-  signUp(props.links.submit_path, userAuth.value.signUpParams)
+  signUp(props.links.submit_path)
     .then(() => window.location.pathname = props.links.redirect_path)
 }
 </script>

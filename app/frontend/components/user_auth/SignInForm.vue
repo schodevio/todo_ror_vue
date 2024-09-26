@@ -1,14 +1,13 @@
 <template>
   <form @submit.prevent="handleSubmit">
     <InputField
-      :errors="errors.email"
       label-for="user_email"
       label="E-mail"
       class="mb-3"
     >
       <InputText
         v-model="userAuth.email"
-        :invalid="!!errors.email"
+        :invalid="!!errors.base"
         name="user[email]"
         id="user_email"
         class="w-full"
@@ -17,14 +16,14 @@
     </InputField>
 
     <InputField
-      :errors="errors.password"
+      :errors="errors.base"
       label-for="user_password"
       label="Password"
       class="mb-3"
     >
       <InputText
         v-model="userAuth.password"
-        :invalid="!!errors.password"
+        :invalid="!!errors.base"
         name="user[password]"
         id="user_password"
         class="w-full"
@@ -98,7 +97,7 @@ const props = defineProps({
 const { userAuth, errors, signIn } = useUserAuth()
 
 const handleSubmit = () => {
-  signIn(props.links.submit_path, userAuth.value.signInParams)
+  signIn(props.links.submit_path)
     .then(() => window.location.pathname = props.links.redirect_path)
 }
 </script>
