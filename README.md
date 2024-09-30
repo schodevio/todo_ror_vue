@@ -29,7 +29,7 @@ A simple web application to manage checklists and tasks.
 - Ruby 3.2.2
 - Node 20.9.0
 - TypeScript 5.5.4
-- Rails 7.1.3.4
+- Rails 7.2.1
 - Vue 3.4.38
 - Vite 5.0.0
 - TailwindCSS 3.4.10
