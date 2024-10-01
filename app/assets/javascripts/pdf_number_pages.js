@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 function number_pages() {
   var vars = {};
   var x = document.location.search.substring(1).split('&');
