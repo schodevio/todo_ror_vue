@@ -1,4 +1,10 @@
-%aside.sidebar
+%aside.sidebar{ class: ('sidebar--mini' if cookies['isSidebarMini'] == 'true') }
+  .flex.justify-end.p-3{ data: { behavior: 'sidebar-toggle' } }
+    %sidebar-toggle
+      .btn.btn--icon= tabler_icon 'arrows_horizontal'
+
+  = vite_typescript_tag 'entrypoints/layout/sidebarToggle'
+
   .sidebar__container
     %ul.sidebar__nav
       %li

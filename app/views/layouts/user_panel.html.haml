@@ -15,7 +15,7 @@
     = vite_typescript_tag 'application.ts'
   %body.bg-white
     = render partial: 'layouts/user_panel/navbar'
-    = render partial: 'layouts/user_panel/sidebar'
 
-    %main.p-4.ml-64.pt-20.min-h-screen
+    %main.main
+      = render partial: 'layouts/user_panel/sidebar'
       = yield

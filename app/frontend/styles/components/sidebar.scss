@@ -1,26 +1,33 @@
 @layer components {
   .sidebar {
     @apply
-      fixed
-      top-0
-      left-0
-      z-40
+      flex
+      flex-col
       w-64
-      h-screen
-      pt-14
       bg-white
       border-r
       border-gray-200;
+
+    &--mini {
+      @apply
+        w-16;
+
+      .sidebar__nav-link {
+        span {
+          @apply
+            hidden;
+        }
+      }
+    }
 
     &__container {
       @apply
         flex
         flex-col
         justify-between
+        flex-1
         overflow-y-auto
-        py-5
-        px-3
-        h-full
+        p-3
         bg-white
         divide-y
         divide-gray-100;
@@ -37,6 +44,7 @@
         items-center
         gap-2
         p-2
+        min-w-10
         text-base
         font-medium
         text-gray-900

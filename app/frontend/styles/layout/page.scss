@@ -1,5 +1,9 @@
 @layer components {
   .page {
+    @apply
+      p-4
+      flex-1;
+
     &__header {
       @apply
         flex
