@@ -1,8 +1,8 @@
 @layer components {
   .btn {
     @apply
-      text-gray-900
       bg-white
+      text-gray-900
       border-gray-200
       hover:text-indigo-700
       hover:bg-gray-100
@@ -11,12 +11,17 @@
       focus:outline-none
       rounded-lg
       border
-      font-medium
       text-sm
+      font-medium
       text-center
+      text-nowrap
+      capitalize
+      tracking-wide
+      transition-colors
+      duration-300
       cursor-pointer
-      py-2.5
-      px-5
+      py-2
+      px-6
       inline-flex
       justify-center
       items-center
@@ -66,7 +71,8 @@
       @apply
         rounded-full
         border-0
-        p-2.5
+        size-10
+        p-2
         text-center
         inline-flex
         items-center;

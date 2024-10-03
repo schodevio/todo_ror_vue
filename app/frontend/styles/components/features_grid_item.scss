@@ -6,15 +6,15 @@
         justify-center
         items-center
         mb-4
-        w-12
-        h-12
+        size-10
+        lg:size-12
         rounded-full
         bg-indigo-100;
 
       & > svg {
         @apply
-          w-6
-          h-6
+          size-5
+          lg:size-6
           text-indigo-600;
       }
     }
@@ -22,7 +22,8 @@
     &__title {
       @apply
         mb-2
-        text-xl
+        text-lg
+        lg:text-xl
         font-bold;
     }
 

@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="handleSubmit">
     <div class="grid grid-cols-2 gap-2">
-      <div class="col-span-1">
+      <div class="col-span-2 lg:col-span-1">
         <InputField
           :errors="errors.first_name"
           label-for="user_first_name"
@@ -19,7 +19,7 @@
         </InputField>
       </div>
 
-      <div class="col-span-1">
+      <div class="col-span-2 lg:col-span-1">
         <InputField
           :errors="errors.last_name"
           label-for="user_last_name"
@@ -59,7 +59,8 @@
         <InputField
           :errors="errors.current_password"
           label-for="user_current_password"
-          label="Password (we need your current password to confirm these changes)"
+          hint="we need your current password to confirm these changes"
+          label="Password"
           class="mb-3"
         >
           <InputText
@@ -77,11 +78,12 @@
         <hr class="text-gray-500 my-8">
       </div>
 
-      <div class="col-span-1">
+      <div class="col-span-2 lg:col-span-1">
         <InputField
           :errors="errors.password"
           label-for="user_password"
-          label="Password (leave blank if you don't want to change it)"
+          hint="leave blank if you don't want to change it"
+          label="Password"
           class="mb-3"
         >
           <InputText
@@ -95,7 +97,7 @@
         </InputField>
       </div>
 
-      <div class="col-span-1">
+      <div class="col-span-2 lg:col-span-1">
         <InputField
           :errors="errors.password_confirmation"
           label-for="user_password_confirmation"

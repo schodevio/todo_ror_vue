@@ -2,7 +2,8 @@
   .testimonial {
     @apply
       mx-auto
-      mb-16;
+      mb-8
+      lg:mb-16;
 
     &__icon {
       & > svg {
@@ -17,7 +18,8 @@
     &__body {
       p {
         @apply
-          text-2xl
+          text-lg
+          lg:text-2xl
           font-medium
           text-gray-900;
       }

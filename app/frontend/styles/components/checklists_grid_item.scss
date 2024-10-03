@@ -1,7 +1,8 @@
 @layer components {
   .checklists-grid-item {
     @apply
-      h-48
+      h-40
+      lg:h-48
       max-w-lg
       relative
       border
@@ -12,8 +13,7 @@
 
     &__thumbnail {
       @apply
-        w-full
-        h-full
+        size-full
         bg-gray-500
         bg-center
         bg-no-repeat
@@ -26,7 +26,8 @@
 
     &__title {
       @apply
-        text-2xl
+        text-xl
+        lg:text-2xl
         font-semibold
         text-white
         drop-shadow

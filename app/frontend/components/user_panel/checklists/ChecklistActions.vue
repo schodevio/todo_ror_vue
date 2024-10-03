@@ -57,7 +57,7 @@
     <Dialog
       v-model:visible="sendEmailDialogOpen"
       header="Send Checklist via E-mail"
-      class="dialog"
+      class="dialog max-w-xl"
       modal
     >
       <SendEmailForm
@@ -85,7 +85,7 @@
     <Dialog
       v-model:visible="deleteDialogOpen"
       header="Delete Checklist"
-      class="dialog"
+      class="dialog max-w-xl"
       modal
     >
       <div class="dialog__row">

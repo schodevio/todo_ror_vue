@@ -17,14 +17,14 @@
       hover:border-indigo-700
       text-gray-500
       hover:text-indigo-700
-      text-2xl
+      text-xl
+      lg:text-2xl
       font-medium
       transition-all;
 
     & > svg {
       @apply
-        h-10
-        w-10;
+        size-10;
     }
   }
 }

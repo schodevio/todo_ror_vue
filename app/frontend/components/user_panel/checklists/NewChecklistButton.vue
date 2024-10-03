@@ -11,7 +11,7 @@
   <teleport to="body">
     <Dialog
       v-model:visible="newDialogOpen"
-      class="w-full max-w-2xl"
+      class="dialog max-w-2xl"
       header="New Checklist"
       modal
     >

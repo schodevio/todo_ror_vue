@@ -11,6 +11,13 @@
     <slot />
 
     <div
+      v-if="hint"
+      class="input-field__hint"
+    >
+      Hint: {{ hint }}
+    </div>
+
+    <div
       v-if="errors.length > 0"
       class="input-field__error"
     >
@@ -32,6 +39,10 @@ defineProps({
     required: true
   },
   label: {
+    type: String as PropType<string>,
+    default: undefined
+  },
+  hint: {
     type: String as PropType<string>,
     default: undefined
   }

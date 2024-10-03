@@ -65,3 +65,28 @@ describe('InputField errors', () => {
     expect(label.exists()).toBe(false)
   })
 })
+
+describe('InputField hint', () => {
+  it('is visible when present in props', () => {
+    const wrapper = mount(InputField, {
+      props: {
+        hint: 'sample text',
+        labelFor: 'name'
+      }
+    })
+
+    const label = wrapper.find('.input-field__hint')
+    expect(label.text()).toContain('Hint: sample text')
+  })
+
+  it('is null when label prop undefined', () => {
+    const wrapper = mount(InputField, {
+      props: {
+        labelFor: 'name'
+      }
+    })
+
+    const label = wrapper.find('.input-field__hint')
+    expect(label.exists()).toBe(false)
+  })
+})

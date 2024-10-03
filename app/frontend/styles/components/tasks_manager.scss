@@ -2,7 +2,8 @@
   .tasks-manager {
     @apply
       flex
-      flex-row
+      flex-col
+      xl:flex-row
       gap-4
       pb-2
       w-full

@@ -27,7 +27,7 @@
         %h1.landing-page__title Stay Organized, Stay Productive
         %h3.landing-page__subtitle Manage your tasks effortlessly with [App Name] - your ultimate ToDo app for personal and professional productivity.
 
-      .flex.flex-row.mb-16.justify-center.space-y-0.space-x-4
+      .landing-page__cta
         = link_to '#', class: 'btn btn--primary' do
           %span Get Started for Free
           = tabler_icon 'arrow_right'
@@ -43,7 +43,8 @@
     .landing-page__section
       %h2.landing-page__section-title What is [App Name]?
 
-      %p.mb-16.text-gray-500.text-lg.text-gray-400 [App Name] is a simple yet powerful ToDo app designed to help you organize your day, manage your tasks, and boost your productivity. Whether you're planning your day-to-day activities, managing work projects, or creating grocery lists, [App Name] has everything you need to stay on top of your tasks and achieve your goals.
+      .mb-16
+        %p.landing-page__section-text [App Name] is a simple yet powerful ToDo app designed to help you organize your day, manage your tasks, and boost your productivity. Whether you're planning your day-to-day activities, managing work projects, or creating grocery lists, [App Name] has everything you need to stay on top of your tasks and achieve your goals.
 
       %dl.stats-grid
         .stats-grid-item
@@ -125,10 +126,9 @@
 
   %section#testimonials
     .landing-page__section
-      .mb-16
-        %h2.landing-page__section-title Real Feedback from Users
+      %h2.landing-page__section-title Real Feedback from Users
 
-      .mx-auto.text-center.pt-16.px-6
+      .flex.flex-col.text-center
         %figure.testimonial
           .testimonial__icon
             = tabler_icon 'quote'
@@ -173,8 +173,7 @@
 
   %section#faq
     .landing-page__section
-      .mb-16
-        %h2.landing-page__section-title Address Common Questions
+      %h2.landing-page__section-title Address Common Questions
 
       .faqs-grid
         .faqs-grid-item
@@ -203,7 +202,7 @@
       .flex.flex-col.items-center.space-y-8
         %h2= link_to '[App Name]', root_path, class: ' text-2xl font-semibold text-gray-900'
 
-        .text-lg.text-center.text-gray-500
+        .landing-page__section-text.text-center
           Have questions? Reach out to us on social media or at
           = link_to 'support@[appname].com', 'mailto:support@[appname].com', class: 'font-medium text-indigo-600 hover:underline'
 

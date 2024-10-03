@@ -1,7 +1,8 @@
 @layer components {
   .navbar {
     @apply
-      flex
+      hidden
+      lg:flex
       items-baseline
       gap-2;
 

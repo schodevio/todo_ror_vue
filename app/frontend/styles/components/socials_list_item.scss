@@ -2,8 +2,8 @@
   .socials-list-item {
     & > svg {
       @apply
-        w-8
-        h-8
+        size-6
+        lg:size-8
         text-gray-500;
     }
   }

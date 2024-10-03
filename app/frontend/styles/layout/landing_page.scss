@@ -21,7 +21,9 @@
     &__title {
       @apply
         mb-6
-        text-6xl
+        text-3xl
+        md:text-4xl
+        lg:text-6xl
         font-extrabold
         tracking-tight
         leading-none
@@ -31,10 +33,22 @@
     &__subtitle {
       @apply
         mb-8
-        px-16
-        text-xl
+        lg:px-16
+        text-base
+        md:text-lg
+        lg:text-xl
         font-normal
         text-gray-500;
+    }
+
+    &__cta {
+      @apply
+        flex
+        flex-col
+        md:flex-row
+        justify-center
+        gap-2
+        mb-16;
     }
 
     &__section {
@@ -47,11 +61,20 @@
 
     &__section-title {
       @apply
-        mb-16
-        text-4xl
+        mb-8
+        lg:mb-16
+        text-3xl
+        lg:text-4xl
         tracking-tight
         font-extrabold
         text-gray-900;
+    }
+
+    &__section-text {
+      @apply
+        text-base
+        lg:text-lg
+        text-gray-500;
     }
   }
 }

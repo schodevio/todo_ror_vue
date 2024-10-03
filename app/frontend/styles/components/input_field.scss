@@ -9,6 +9,13 @@
         text-gray-900;
     }
 
+    &__hint {
+      @apply
+        mt-1
+        text-xs
+        text-gray-500;
+    }
+
     &__error {
       @apply
         block

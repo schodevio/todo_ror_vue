@@ -50,7 +50,7 @@
     <Dialog
       v-model:visible="deleteDialogOpen"
       header="Delete Task"
-      class="dialog"
+      class="dialog max-w-xl"
       modal
     >
       <div class="dialog__row">
