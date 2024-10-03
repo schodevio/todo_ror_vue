@@ -2,14 +2,14 @@
   %ol.breadcrumbs-list
     %li.breadcrumbs-list-item
       = link_to user_panel_dashboard_path, class: 'breadcrumbs-list-item__link' do
-        = tabler_icon 'home'
+        %i.icon.icon-home.text-2xl
         %span Home
     %li.breadcrumbs-list-item
       = link_to user_panel_checklists_path, class: 'breadcrumbs-list-item__link' do
-        = tabler_icon 'chevron_right'
+        %i.icon.icon-chevron-right.text-2xl
         %span Checklists
     - if @checklist
       %li.breadcrumbs-list-item
         = link_to user_panel_checklist_path(@checklist), class: 'breadcrumbs-list-item__link' do
-          = tabler_icon 'chevron_right'
+          %i.icon.icon-chevron-right.text-2xl
           %span= @checklist.name

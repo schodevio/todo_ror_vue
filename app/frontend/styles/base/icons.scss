@@ -1,0 +1,10 @@
+$ti-font-path: '@tabler/icons-webfont/dist/fonts';
+$ti-prefix: 'icon' !default;
+
+@import '@tabler/icons-webfont/dist/tabler-icons.scss';
+
+@layer components {
+  .icon {
+    @apply text-lg;
+  }
+}

@@ -1,9 +1,8 @@
 @layer components {
   .socials-list-item {
-    & > svg {
+    & > i {
       @apply
-        size-6
-        lg:size-8
+        text-2xl
         text-gray-500;
     }
   }

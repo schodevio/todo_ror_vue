@@ -26,7 +26,7 @@
             class="btn btn--icon"
             type="button"
           >
-            <IconPencil width="18" />
+            <i class="icon icon-pencil" />
           </button>
 
           <button
@@ -35,7 +35,7 @@
             class="btn btn--icon"
             type="button"
           >
-            <IconTrash width="18" />
+            <i class="icon icon-trash" />
           </button>
         </div>
       </div>
@@ -54,10 +54,7 @@
       modal
     >
       <div class="dialog__row">
-        <IconAlertHexagon
-          class="text-red-600"
-          width="36"
-        />
+        <i class="icon icon-alert-hexagon text-3xl text-red-600" />
 
         <p>Are you sure you want to delete the <strong>{{ props.task.name }}</strong> task?</p>
       </div>
@@ -93,12 +90,6 @@ import useTask from '@components/user_panel/tasks/composables/useTask'
 //- Components
 import EditTaskForm from '@components/user_panel/tasks/EditTaskForm.vue'
 import Dialog from 'primevue/dialog'
-
-import {
-  IconAlertHexagon,
-  IconPencil,
-  IconTrash
-} from '@tabler/icons-vue'
 
 const props = defineProps({
   task: {

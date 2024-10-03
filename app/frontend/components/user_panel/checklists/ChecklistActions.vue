@@ -3,7 +3,7 @@
     @click="actionsPopover.toggle"
     class="btn btn--icon"
   >
-    <IconDotsVertical width="24" />
+    <i class="icon icon-dots-vertical text-2xl" />
   </button>
 
   <Popover
@@ -16,7 +16,7 @@
           :href="checklist.links.export_checklist_pdf_path"
           target="_blank"
         >
-          <IconFileArrowRight width="16" />
+          <i class="icon icon-file-arrow-right" />
           Export to PDF
         </a>
       </li>
@@ -26,7 +26,7 @@
           @click="handleSendEmail"
           type="button"
         >
-          <IconSend width="16" />
+          <i class="icon icon-send" />
           Send via E-mail
         </button>
       </li>
@@ -36,7 +36,7 @@
           @click="handleEdit"
           type="button"
         >
-          <IconPencil width="16" />
+          <i class="icon icon-pencil" />
           Edit
         </button>
       </li>
@@ -46,7 +46,7 @@
           @click="handleDelete"
           type="button"
         >
-          <IconTrash width="16" />
+          <i class="icon icon-trash" />
           Delete
         </button>
       </li>
@@ -89,10 +89,7 @@
       modal
     >
       <div class="dialog__row">
-        <IconAlertHexagon
-          class="text-red-600"
-          width="36"
-        />
+        <i class="icon icon-alert-hexagon text-3xl text-red-600" />
 
         <p>
           Are you sure you want to delete the <strong>{{ checklist.name }}</strong> checklist? <br>
@@ -134,15 +131,6 @@ import ChecklistFormBody from '@components/user_panel/checklists/ChecklistFormBo
 import SendEmailForm from '@components/user_panel/checklists/SendEmailForm.vue'
 import Dialog from 'primevue/dialog'
 import Popover from 'primevue/popover'
-
-import {
-  IconAlertHexagon,
-  IconDotsVertical,
-  IconFileArrowRight,
-  IconPencil,
-  IconSend,
-  IconTrash
-} from '@tabler/icons-vue'
 
 const props = defineProps({
   checklist: {

@@ -21,7 +21,7 @@
         type="submit"
         class="btn btn--primary"
       >
-        <IconPlus width="20" />
+        <i class="icon icon-plus" />
         <span>Add Task</span>
       </button>
     </div>
@@ -38,7 +38,6 @@ import useTask from '@components/user_panel/tasks/composables/useTask'
 //- Components
 import InputField from '@components/shared/fields/InputField.vue'
 import InputText from 'primevue/inputtext'
-import { IconPlus } from '@tabler/icons-vue'
 
 const props = defineProps({
   links: {

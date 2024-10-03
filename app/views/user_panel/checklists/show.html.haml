@@ -6,7 +6,8 @@
 
       .page__actions{ data: { behavior: 'checklist-actions' } }
         %checklist-actions{ 'v-bind': render(template: 'user_panel/checklists/show', formats: %i[json]) }
-          .btn.btn--icon= tabler_icon 'dots_vertical'
+          .btn.btn--icon
+            %i.icon.icon-dots-vertical.text-2xl
 
       = vite_typescript_tag 'entrypoints/user_panel/checklists/checklistActions.ts'
 

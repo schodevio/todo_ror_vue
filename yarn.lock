@@ -429,10 +429,10 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.23.0.tgz#54e3562ebd264ef5839f8091618310c40d43d8a9"
   integrity sha512-lqCK5GQC8fNo0+JvTSxcG7YB1UKYp8yrNLhsArlvPWN+16ovSZgoehlVHg6X0sSWPUkpjRBR5TuR12ZugowZ4g==
 
-"@tabler/icons-vue@^3.15.0":
+"@tabler/icons-webfont@^3.19.0":
   version "3.19.0"
-  resolved "https://registry.yarnpkg.com/@tabler/icons-vue/-/icons-vue-3.19.0.tgz#4240303d4567ce2a87d28c9dffe5377eb6131ce1"
-  integrity sha512-H9gGYvZIPCUQprHz+8qPx8MSKf28WHpiIX1lHmxckUS06P63LnTMwsvx+KCcMBEhMrdSxlIqk6fb+xR+61yVOQ==
+  resolved "https://registry.yarnpkg.com/@tabler/icons-webfont/-/icons-webfont-3.19.0.tgz#d103a26aee6a0baa1c533b9e1b3955c4d83a53f5"
+  integrity sha512-c3axiLTjFFbR+LCqGD4MkWSguIb3KdFacCrwVoytVEMAgqvg12YeqJ9b6EGbpnoHcvve5ZvN5kGJtBVV7r1SQw==
   dependencies:
     "@tabler/icons" "3.19.0"
 

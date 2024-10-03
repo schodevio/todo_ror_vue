@@ -21,7 +21,7 @@
         v-if="isSubmitSuccess"
         class="btn btn--success w-full"
       >
-        <IconSend width="20px" />
+        <i class="icon icon-send" />
         Email has been sent!
       </div>
 
@@ -58,7 +58,6 @@ import useUserAuth from '@components/user_auth/composables/useUserAuth'
 //- Components
 import InputField from '@components/shared/fields/InputField.vue'
 import InputText from 'primevue/inputtext'
-import { IconSend } from '@tabler/icons-vue'
 
 const props = defineProps({
   links: {

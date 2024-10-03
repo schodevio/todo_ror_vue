@@ -11,10 +11,9 @@
         rounded-full
         bg-indigo-100;
 
-      & > svg {
+      & > .icon {
         @apply
-          size-5
-          lg:size-6
+          text-2xl
           text-indigo-600;
       }
     }

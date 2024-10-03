@@ -1,7 +1,8 @@
 %aside.sidebar{ class: ('sidebar--mini' if cookies['isSidebarMini'] == 'true') }
   .flex.justify-end.p-3{ data: { behavior: 'sidebar-toggle' } }
     %sidebar-toggle
-      .btn.btn--icon= tabler_icon 'arrows_horizontal'
+      .btn.btn--icon
+        %i.ti.ti-arrows-horizontal
 
   = vite_typescript_tag 'entrypoints/layout/sidebarToggle'
 
@@ -9,18 +10,18 @@
     %ul.sidebar__nav
       %li
         = active_link_to user_panel_dashboard_path, class: 'sidebar__nav-link' do
-          = tabler_icon 'home'
+          %i.icon.icon-home.text-2xl
           %span Home
       %li
         = active_link_to user_panel_checklists_path, class: 'sidebar__nav-link' do
-          = tabler_icon 'list_details'
+          %i.icon.icon-list-details.text-2xl
           %span Checklists
     %ul.sidebar__nav
       %li
         = link_to '#', class: 'sidebar__nav-link' do
-          = tabler_icon 'settings'
+          %i.icon.icon-settings.text-2xl
           %span Settings
       %li
         = active_link_to edit_user_registration_path, class: 'sidebar__nav-link' do
-          = tabler_icon 'user_hexagon'
+          %i.icon.icon-user-hexagon.text-2xl
           %span Profile

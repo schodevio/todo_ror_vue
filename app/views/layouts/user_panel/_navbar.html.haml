@@ -4,9 +4,10 @@
       %h1.text-xl.font-bold.leading-tight.tracking-tight.text-gray-900 [App Name]
 
     .flex.items-center.gap-2
-      .btn.btn--icon= tabler_icon 'bell'
+      .btn.btn--icon
+        %i.icon.icon-bell-filled
 
       = form_with url: destroy_user_session_path, method: :delete do |f|
         = f.button type: 'submit', class: 'btn' do
-          = tabler_icon 'logout'
+          %i.icon.icon-logout
           %span Logout

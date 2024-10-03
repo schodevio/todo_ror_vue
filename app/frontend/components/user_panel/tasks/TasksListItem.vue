@@ -19,10 +19,7 @@
     </button>
 
     <div class="tasks-list-item__actions">
-      <IconGripVertical
-        class="tasks-list-item__handle"
-        width="20"
-      />
+      <i class="icon icon-grip-vertical tasks-list-item__handle" />
     </div>
   </div>
 </template>
@@ -36,7 +33,6 @@ import { TaskModel } from '@components/user_panel/tasks/models/task'
 import useTask from '@components/user_panel/tasks/composables/useTask'
 //- Components
 import Checkbox from 'primevue/checkbox'
-import { IconGripVertical } from '@tabler/icons-vue'
 
 const props = defineProps({
   task: {

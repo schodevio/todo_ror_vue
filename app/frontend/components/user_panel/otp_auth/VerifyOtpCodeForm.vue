@@ -35,7 +35,7 @@
       @click="signOut"
       class="btn w-full"
     >
-      <IconLogout width="20px" />
+      <i class="icon icon-logout" />
       Log Out
     </button>
   </div>
@@ -51,7 +51,6 @@ import useOTPAuth from '@components/user_panel/otp_auth/composables/useOTPAuth'
 //- Components
 import InputField from '@components/shared/fields/InputField.vue'
 import InputText from 'primevue/inputtext'
-import { IconLogout } from '@tabler/icons-vue'
 //- Utils
 import useHTTP from '@utils/useHTTP'
 

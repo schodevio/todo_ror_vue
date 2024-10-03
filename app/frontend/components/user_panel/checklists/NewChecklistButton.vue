@@ -4,7 +4,7 @@
     class="checklist-new-btn"
     type="button"
   >
-    <IconHexagonPlus width="24" />
+    <i class="icon icon-hexagon-plus text-4xl" />
     <div>New Checklist</div>
   </button>
 
@@ -36,8 +36,6 @@ import useChecklist from '@components/user_panel/checklists/composables/useCheck
 //- Components
 import ChecklistFormBody from '@components/user_panel/checklists/ChecklistFormBody.vue'
 import Dialog from 'primevue/dialog'
-
-import { IconHexagonPlus } from '@tabler/icons-vue'
 
 const props = defineProps({
   links: {

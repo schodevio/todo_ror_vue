@@ -4,14 +4,13 @@
     class="btn btn--icon"
     type="button"
   >
-    <IconArrowsHorizontal width="16" />
+    <i class="icon icon-arrows-horizontal" />
   </button>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { useCookies } from '@vueuse/integrations/useCookies'
-import { IconArrowsHorizontal } from '@tabler/icons-vue'
 
 const sidebarElement = document.querySelector('.sidebar')
 
