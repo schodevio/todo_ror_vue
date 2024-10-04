@@ -8,6 +8,7 @@ gem 'active_link_to'
 gem 'active_model_otp'
 gem 'bootsnap', require: false
 gem 'devise'
+gem 'gruff'
 gem 'haml-rails'
 gem 'image_processing', '~> 1.2'
 gem 'jbuilder'

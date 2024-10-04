@@ -9,6 +9,9 @@
     %main
       %h1 Checklist: #{presenter.checklist.name}
 
+      .text-center
+        %img{ src: blob_to_base64_url(presenter.progress_pie_chart.to_blob) }
+
       %table.table-striped
         %tbody
           - presenter.tasks.each do |task|

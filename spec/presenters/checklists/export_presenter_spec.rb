@@ -15,6 +15,18 @@ RSpec.describe Checklists::ExportPresenter do
     end
   end
 
+  describe '#progress_pie_chart' do
+    it 'calls ProgressPieChartRendered service' do
+      checklist = create(:checklist, :with_user, name: 'Sample Checklist')
+
+      allow(Checklists::ProgressPieChartRenderer).to receive(:call)
+
+      described_class.new(checklist, user: checklist.user).progress_pie_chart
+
+      expect(Checklists::ProgressPieChartRenderer).to have_received(:call).with(checklist)
+    end
+  end
+
   describe '#as_pdf' do
     it 'calls RenderPDFService with checklist_export as views' do
       checklist = create(:checklist, :with_user, name: 'Sample Checklist')

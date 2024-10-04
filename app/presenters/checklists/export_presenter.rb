@@ -15,6 +15,10 @@ module Checklists
       "#{name_param}_#{current_time_param}.pdf"
     end
 
+    def progress_pie_chart
+      ProgressPieChartRenderer.call(checklist)
+    end
+
     def as_pdf
       RenderPDFService.call(self, views: 'pdfs/checklist_export')
     end

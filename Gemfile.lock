@@ -126,6 +126,10 @@ GEM
     ffi (1.17.0-x86_64-linux-gnu)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    gruff (0.25.0)
+      bigdecimal (>= 3.0)
+      histogram
+      rmagick (>= 5.5)
     haml (6.3.0)
       temple (>= 0.8.2)
       thor
@@ -135,6 +139,7 @@ GEM
       activesupport (>= 5.1)
       haml (>= 4.0.6)
       railties (>= 5.1)
+    histogram (0.2.4.1)
     html2haml (2.3.0)
       erubis (~> 2.7.0)
       haml (>= 4.0)
@@ -183,12 +188,14 @@ GEM
     nio4r (2.7.3)
     nokogiri (1.16.7-x86_64-linux)
       racc (~> 1.4)
+    observer (0.1.2)
     orm_adapter (0.5.0)
     parallel (1.26.3)
     parser (3.3.4.2)
       ast (~> 2.4.1)
       racc
     pg (1.5.7)
+    pkg-config (1.5.6)
     positioning (0.2.6)
       activerecord (>= 6.1)
       activesupport (>= 6.1)
@@ -256,6 +263,9 @@ GEM
       railties (>= 5.2)
     rexml (3.3.6)
       strscan
+    rmagick (6.0.1)
+      observer (~> 0.1)
+      pkg-config (~> 1.4)
     rotp (6.3.0)
     rouge (4.4.0)
     rqrcode (2.2.0)
@@ -381,6 +391,7 @@ DEPENDENCIES
   debug
   devise
   factory_bot_rails
+  gruff
   haml-rails
   html2haml
   image_processing (~> 1.2)
