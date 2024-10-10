@@ -1,0 +1,36 @@
+@import '@vueup/vue-quill/dist/vue-quill.bubble.css';
+
+@layer components {
+  .ql-toolbar {
+    @apply
+      rounded-t-lg;
+  }
+
+  .ql-container {
+    box-shadow: var(--p-inputtext-shadow);
+
+    @apply
+      rounded-b-lg;
+  }
+
+  .ql-editor {
+    @apply
+      max-w-none
+      prose;
+  }
+
+  .ql-align-left {
+    @apply
+      text-start;
+  }
+
+  .ql-align-center {
+    @apply
+      text-center;
+  }
+
+  .ql-align-right {
+    @apply
+      text-end;
+  }
+}

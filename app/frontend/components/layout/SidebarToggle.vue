@@ -21,6 +21,6 @@ const handleClick = () => {
   isMini.value = !isMini.value
 
   cookies.set('isSidebarMini', isMini.value)
-  sidebarElement && sidebarElement.classList.toggle('sidebar--mini')
+  if (sidebarElement) sidebarElement.classList.toggle('sidebar--mini')
 }
 </script>

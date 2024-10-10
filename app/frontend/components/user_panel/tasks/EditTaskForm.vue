@@ -23,16 +23,110 @@
       label="Description"
       class="mb-3"
     >
-      <Textarea
+      <Editor
         v-model="task.description"
-        :invalid="!!errors.description"
-        placeholder="Your short description here..."
-        name="task[description]"
-        id="task_description"
-        class="w-full"
-        rows="4"
-        auto-resize
-      />
+        content-type="html"
+      >
+        <template #toolbar>
+          <span class="ql-formats">
+            <select
+              v-tooltip.bottom="'Font'"
+              class="ql-font"
+            />
+
+            <button
+              v-tooltip.bottom="'Header'"
+              class="ql-header"
+              value="1"
+            />
+
+            <button
+              v-tooltip.bottom="'Subheader'"
+              class="ql-header"
+              value="2"
+            />
+          </span>
+
+          <span class="ql-formats">
+            <button
+              v-tooltip.bottom="'Bold'"
+              class="ql-bold"
+            />
+
+            <button
+              v-tooltip.bottom="'Italic'"
+              class="ql-italic"
+            />
+
+            <button
+              v-tooltip.bottom="'Underline'"
+              class="ql-underline"
+            />
+
+            <button
+              v-tooltip.bottom="'Strike'"
+              class="ql-strike"
+            />
+          </span>
+
+          <span class="ql-formats">
+            <button
+              v-tooltip.bottom="'Blockquote'"
+              class="ql-blockquote"
+            />
+
+            <button
+              v-tooltip.bottom="'Code'"
+              class="ql-code-block"
+            />
+          </span>
+
+          <span class="ql-formats">
+            <select
+              v-tooltip.bottom="'Color'"
+              class="ql-color"
+            />
+
+            <select
+              v-tooltip.bottom="'Background'"
+              class="ql-background"
+            />
+          </span>
+
+          <span class="ql-formats">
+            <button
+              v-tooltip.bottom="'Ordered List'"
+              class="ql-list"
+              value="ordered"
+            />
+
+            <button
+              v-tooltip.bottom="'List'"
+              class="ql-list"
+              value="bullet"
+            />
+
+            <button
+              v-tooltip.bottom="'Add Indentation'"
+              class="ql-indent"
+              value="-1"
+            />
+
+            <button
+              v-tooltip.bottom="'Remove Indentation'"
+              class="ql-indent"
+              value="+1"
+            />
+          </span>
+
+          <span class="ql-formats">
+            <select
+              v-tooltip.bottom="'Align'"
+              class="ql-align"
+            />
+          </span>
+        </template>
+      </Editor>
     </InputField>
 
     <div class="task-view__actions">
@@ -63,8 +157,8 @@ import { TaskModel } from '@components/user_panel/tasks/models/task'
 import useTask from '@components/user_panel/tasks/composables/useTask'
 //- Components
 import InputField from '@components/shared/fields/InputField.vue'
+import Editor from 'primevue/editor'
 import InputText from 'primevue/inputtext'
-import Textarea from 'primevue/textarea'
 
 const props = defineProps({
   task: {

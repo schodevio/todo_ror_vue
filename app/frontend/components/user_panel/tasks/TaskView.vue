@@ -40,9 +40,12 @@
         </div>
       </div>
 
-      <div class="task-view__content">
-        <p>{{ props.task.description }}</p>
-      </div>
+      <!-- eslint-disable vue/no-v-html -->
+      <div
+        v-html="props.task.description"
+        class="task-view__content prose max-w-none"
+      />
+      <!-- eslint-enable -->
     </div>
   </div>
 

@@ -22,7 +22,7 @@
                 %td.checkbox= tabler_icon 'square'
               %td
                 %h4.task-name= task.name
-                %p= task.description
+                %p= task.description&.html_safe
 
           - if presenter.tasks.empty?
             %tr

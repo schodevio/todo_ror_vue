@@ -42,15 +42,18 @@ td.checkbox {
   color: #9ca3af;
 }
 
-.text-left {
+.text-left,
+.ql-align-left {
   text-align: left;
 }
 
-.text-center {
+.text-center,
+.ql-align-center {
   text-align: center;
 }
 
-.text-right {
+.text-right,
+.ql-align-right {
   text-align: right;
 }
 
